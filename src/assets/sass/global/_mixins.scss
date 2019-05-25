@@ -1,0 +1,10 @@
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+  }
+  @mixin imgbackground($url) {
+    background-image:url($url);
+    background-repeat: no-repeat;
+  
+  }

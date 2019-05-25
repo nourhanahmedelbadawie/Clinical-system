@@ -1,0 +1,262 @@
+@import '../../assets/sass/global/variables' ;
+@import '../../assets/sass/global/mixins' ;
+.page{
+    background-color: $greycolor;
+    width: 1759px;
+font-family: sans;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+.hdimg{
+    @include imgbackground("../../assets/img/hdimg.png") ;
+
+    width: 80%;
+    height: 741px;
+    background-size: cover;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    width: 100%;
+    padding-top: 30px;
+
+    ul{
+display: flex;
+justify-content:space-between;
+z-index: 3;
+color: white;
+
+    margin-left: 355px;
+    cursor: pointer;
+
+li{
+margin-left: 30px;
+&:hover{
+    color: $yellowcolor;
+}
+}
+& li:last-child a{
+    display: inline-block;
+    border-radius: 25px;
+    border-radius: 25px;
+    border: 1px solid $seccolor;
+    background-color: $seccolor;
+    width: 80px;
+    padding: 8px;
+  color: white;
+    text-align: center;
+    cursor: pointer;
+    &:hover{
+        color: $yellowcolor;
+    }
+}
+
+    }
+}
+.hdtxt
+{
+    width: 45%;
+    padding-left: 305px;
+
+    padding-top: 85px;
+    color: $txtcolor;
+   
+
+
+h1{
+    font-size: 3.5rem;
+    color: $seccolor;
+    margin-bottom: 2rem;
+
+}
+p{
+    font-size: 1.5rem;
+    color: $txtcolor;
+    margin-bottom: 40px;
+}
+button{
+    background-color: $pricolor;
+
+    padding: 20px;
+    color: white;
+    border-radius: 25px;
+    text-align: center;
+    width: 278px;
+    font-size: 1.8rem;
+    transition: all 0.4s ease 0s;
+    &:hover{
+        background: $yellowcolor;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.4s ease 0s;
+    }
+}
+}
+
+// sec section
+.sec_section{
+    padding: 200px;
+  position: relative;
+    width: 100%;
+    height: 1467px;
+    margin-bottom: 274px;
+ 
+    .img1{
+        @include imgbackground("../../assets/img/female-doctor-surrounded-by-men.jpg") ;
+      
+        width: 41%;
+        height: 727px;
+        background-size: contain;
+  
+    }
+    .txt{
+      background-color: white;
+      border-bottom: 23px solid;
+        border-bottom-color:  $pricolor;
+        padding: 5rem;
+        font-size: 20px;
+        color: $pricolor;
+        width: 30%;
+        height: 349px;
+        font-size: 1rem;
+        position: absolute;
+        right: 31%;
+        bottom:53%;
+        h2{
+            color: $txtcolor
+        }
+    
+    }
+    & .txt:nth-of-type(2){
+        border-bottom: 23px  solid;
+        border-bottom-color: $seccolor;
+        color: $seccolor;
+        right: 30%;
+        bottom:3%;
+    }
+    .img2{
+        @include imgbackground("../../assets/img/pregnant-woman-with-doctor.jpg") ;
+        width: 41%;
+        height: 727px;
+        background-size: contain;
+    }
+}
+.news{
+    margin-bottom: 274px;
+    h2{
+        margin-bottom: 50px;
+    }
+.img{
+    width: 99%;
+    height: 195px;
+    margin-bottom: 20px;
+ 
+img{
+    width: 100%;
+    height: 100%
+}
+.txt ,.txt p a{
+padding: 10px;
+width: 100%;
+background-color: $seccolor;
+color: white;
+& p:nth-of-type(1) a{
+    color: $yellowcolor;
+font-weight: bold
+}
+}
+}
+}
+
+// contact
+.contact{
+height: 400px;
+width: 100%;
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 0 0 35vw 98.5vw;
+border-color: transparent transparent $pricolor transparent;
+
+form{
+ 
+
+
+
+    background-color: white;
+    width: 416px;
+    padding: 20px;
+    transform: translate(-231%,21%);
+    textarea{
+        height: 100px;
+        max-height: 100px;
+        margin-left: 14px;
+        width: 93%;
+    }
+ #msgtitle{
+        margin-left:14px
+    
+    }
+    button{
+        width: 84px;
+        padding: 11px;
+        text-align: center;
+        color: white;
+        background-color: $pricolor;
+        font-weight: bold;
+        font-size: 13px;
+        transition:  background-color 0.7s ease-in;
+        &:hover{
+            background-color:#24665c;
+            
+        }
+    }
+}
+
+label{
+    color: $txtcolor;
+    font-weight: bold;
+    font-size: 13px;
+}
+//handel width of default 
+.col-sm-10 {
+
+    max-width: 100.333333%;
+}
+
+}
+
+// footer
+.footer{
+
+    background-color: $pricolor;
+    height: 121px;
+    width: 99.55%;
+ color: white;
+ .row div:nth-of-type(1){
+     width: 100%;
+     display: flex;
+     justify-content:space-between;
+     margin-bottom: 4%;
+
+     i{
+         font-size: 17px;
+         margin-right: 5px
+     }
+p.text-center{
+    text-align: center
+}
+ 
+
+ }
+ .row div:nth-of-type(2){
+width: 100%;
+text-align: center
+ }
+}
+

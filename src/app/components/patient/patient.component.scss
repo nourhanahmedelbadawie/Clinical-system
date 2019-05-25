@@ -1,0 +1,68 @@
+@import '../../assets/sass/global/variables' ;
+.page{
+background-color: $greycolor;
+
+height: auto;
+padding-top: 100px;
+font-family: sans;
+h2{
+    width: 100%;
+    margin-bottom: 50px;
+}
+}
+
+#search{
+margin-bottom: 50px;
+
+}
+
+.card{
+    background-color: white;
+    box-shadow: 0 0 1px 1px rgb(204, 202, 202);
+    border-radius: 5px;
+    margin-bottom: 50px;
+    .card-body{
+        display: flex;
+        
+        img{
+            width: 30%;
+            height: 100%;
+          margin-right: 40px;
+        
+        }
+   
+
+
+        .btn-primary{
+            background-color: $seccolor;
+            border: none;
+           color:white;
+           font-weight: bold;
+           font-size: 1rem;
+           padding: 11px;
+           margin:0 auto;
+        }
+
+    }
+
+ #rating{
+font-size: 48px;
+display: inline-flex;
+& > .star::after{
+    content: '\f005';
+    color:#7777;
+    font-family: FontAwesome;
+    cursor: pointer;
+}
+& > .star.full::after{
+    content: '\f005';
+    color:yellow;
+
+}
+
+
+
+
+
+    }
+}

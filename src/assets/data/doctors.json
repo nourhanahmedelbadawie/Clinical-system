@@ -1,0 +1,15 @@
+[{
+"name":"Lorem Ipsum ",
+"rate":"5",
+"title":"simply dummy",
+"fees":"100",
+"rank":"readable content"  ,
+"src":"../../assets/img/1.jpg"  
+},{
+    "name":"Lorem Ipsum ",
+    "rate":"6",
+    "title":"simply dummy",
+    "fees":"200",
+    "rank":"readable content" ,
+    "src":"../../assets/img/1.jpg"    
+}]
