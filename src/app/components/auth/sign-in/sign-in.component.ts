@@ -10,6 +10,7 @@ import { AuthService } from '../../../service/authservice.service';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
+  myInnerHeight=window.innerHeight;
   flagin=false;
   errMsgin:string;
   userModel={
@@ -30,6 +31,9 @@ export class SignInComponent implements OnInit {
   }
   GoogleAuth(){
   this.authservice.GoogleAuth();
+  }
+  FacebookAuth(){
+    this.authservice.FacebookAuth()
   }
  
   

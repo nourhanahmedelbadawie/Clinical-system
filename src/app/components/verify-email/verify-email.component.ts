@@ -7,10 +7,15 @@ import { AuthService } from '../../service/authservice.service';
   styleUrls: ['./verify-email.component.scss']
 })
 export class VerifyEmailComponent implements OnInit {
-
-  constructor(public authservice:AuthService) { }
-
+  public user;
+  constructor(public authservice:AuthService) { 
+    this.user=this.authservice.userData;
+    console.log(this.user)
+  }
   ngOnInit() {
+  }
+  SendVerificationMail(){
+    this.authservice.SendVerificationMail();
   }
 
 }

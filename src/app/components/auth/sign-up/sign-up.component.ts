@@ -15,19 +15,21 @@ import { AuthService } from '../../../service/authservice.service';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
+  myInnerHeight=window.innerHeight;
   public cities=["Giza","Alexandria","Shubra el-Khema","Port Said","Suez","El Mahalla el Kubra","El Mansoura"]
     userModel:User={
     username:"",
     email:"",
-    phone:"",
     city:"",
     gender: true ,
     date:"",
-    password:""
+    password:"",
+    phoneNumber:"",
+    conpassword:""
   }
  
   constructor(private db:AngularFireDatabase,
-    private route:Router,
+    public route:Router,
     public authservice:AuthService) {    
   }
 
@@ -45,7 +47,7 @@ export class SignUpComponent implements OnInit {
     this.db.list('/clinical-system-b5ad4').push({
       username:form.value.username,
       email:form.value.email,
-      phone:form.value.phone,
+      phoneNumber:form.value.phone,
       city:form.value.city,
       gender:form.value.gender,
       date:form.value.date,
@@ -57,14 +59,12 @@ export class SignUpComponent implements OnInit {
     console.log(email);
     console.log(password)
   }
-
   GoogleAuth(){
     this.authservice.GoogleAuth();
-  }
-  // FacebookAuth(){
-  //   this.authservice.
-  // }
- 
+    }
+    FacebookAuth(){
+      this.authservice.FacebookAuth()
+    }
   
 
 }

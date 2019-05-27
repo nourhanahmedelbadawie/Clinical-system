@@ -14,6 +14,7 @@ export class ForgetPasswordComponent implements OnInit {
   }
   ForgotPassword(passwordResetEmail){
     this.authservice.ForgotPassword(passwordResetEmail.value)
+    console.log(passwordResetEmail.value)
   }
 
 }
