@@ -1,5 +1,5 @@
-@import '../../assets/sass/global/variables' ;
-@import '../../assets/sass/global/mixins' ;
+@import './../../../assets/sass/global/variables' ;
+@import './../../../assets/sass/global/mixins' ;
 .page{
     background-color: $greycolor;
     width: 1759px;
@@ -10,7 +10,7 @@ font-family: sans;
     justify-content: space-between;
 }
 .hdimg{
-    @include imgbackground("../../assets/img/hdimg.png") ;
+    @include imgbackground("./../../../assets/img/hdimg.png") ;
 
     width: 80%;
     height: 741px;
@@ -107,7 +107,7 @@ transition: all 0.4s ease 0s;
     margin-bottom: 274px;
  
     .img1{
-        @include imgbackground("../../assets/img/female-doctor-surrounded-by-men.jpg") ;
+        @include imgbackground("./../../../assets/img/female-doctor-surrounded-by-men.jpg") ;
       
         width: 41%;
         height: 727px;
@@ -140,7 +140,7 @@ transition: all 0.4s ease 0s;
         bottom:3%;
     }
     .img2{
-        @include imgbackground("../../assets/img/pregnant-woman-with-doctor.jpg") ;
+        @include imgbackground("./../../../assets/img/pregnant-woman-with-doctor.jpg") ;
         width: 41%;
         height: 727px;
         background-size: contain;
