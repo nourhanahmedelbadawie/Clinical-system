@@ -1,15 +1,15 @@
 [{
-"name":"Lorem Ipsum ",
-"rate":"5",
-"title":"simply dummy",
+"name":"Mohamed Ahmed ",
+"title":"Profeesor",
+"rate":"",
 "fees":"100",
-"rank":"readable content"  ,
+"rank":"BSC"  ,
 "src":"../../assets/img/1.jpg"  
 },{
-    "name":"Lorem Ipsum ",
-    "rate":"6",
-    "title":"simply dummy",
+    "name":"Ali Mohamed ",
+    "rate":"",
+    "title":"Specialist",
     "fees":"200",
-    "rank":"readable content" ,
+    "rank":"MBA" ,
     "src":"../../assets/img/1.jpg"    
 }]
