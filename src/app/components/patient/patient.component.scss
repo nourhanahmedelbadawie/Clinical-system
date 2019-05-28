@@ -1,7 +1,7 @@
-@import './../../..//assets/sass/global/variables' ;
+@import '../../../assets/sass/global/variables' ;
 .page{
 background-color: $greycolor;
-
+width: 98vw;
 height: auto;
 padding-top: 100px;
 font-family: sans;
@@ -34,7 +34,7 @@ margin-bottom: 50px;
 
 
         .btn-primary{
-            background-color: $seccolor;
+            background-color: $yellowcolor;
             border: none;
            color:white;
            font-weight: bold;

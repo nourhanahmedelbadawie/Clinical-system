@@ -9,7 +9,7 @@ export class MainComponent implements OnInit {
  
 
   constructor( private router: Router) { }
-
+  myInnerHeight=window.innerHeight;
   ngOnInit() {
   }
   btnclick() {
