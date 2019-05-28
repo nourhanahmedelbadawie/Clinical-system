@@ -1,94 +1,81 @@
-@import './../../../assets/sass/global/variables' ;
-@import './../../../assets/sass/global/mixins' ;
+@import '../../../assets/sass/global/variables' ;
+@import '../../../assets/sass/global/mixins' ;
+
 .page{
     background-color: $greycolor;
-    width: 1759px;
+   
 font-family: sans;
+height: auto;
 }
-.header {
-    display: flex;
-    justify-content: space-between;
-}
-.hdimg{
-    @include imgbackground("./../../../assets/img/hdimg.png") ;
-
-    width: 80%;
-    height: 741px;
-    background-size: cover;
+h3{
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 50px
 }
 nav{
-    display: flex;
-    justify-content: space-around;
-    height: 100px;
     width: 100%;
-    padding-top: 30px;
-
-    ul{
-display: flex;
-justify-content:space-between;
-z-index: 3;
-color: white;
-
-    margin-left: 355px;
-    cursor: pointer;
-
-li{
-margin-left: 30px;
-&:hover{
-    color: $yellowcolor;
-}
-}
-& li:last-child a{
-    display: inline-block;
-    border-radius: 25px;
-    border-radius: 25px;
-    border: 1px solid $seccolor;
-    background-color: $seccolor;
-    width: 80px;
-    padding: 8px;
-  color: white;
-    text-align: center;
-    cursor: pointer;
-    &:hover{
-        color: $yellowcolor;
+    height: 50px;
+    background:rgba(8, 210, 179, 0.1);
+    a.logo{
+        text-decoration: none;
     }
-}
-
+    a.logo,ul li a{
+            color: white;
+            font-weight: bold;
+            
+           &:hover{
+                color: $yellowcolor;
+            
+        }
     }
+   
+}
+.header{
+    width: 100%;
+    height:100vh;
+    position: relative;
+    margin-bottom: 80px;
 }
 .hdtxt
 {
-    width: 45%;
-    padding-left: 305px;
-
-    padding-top: 85px;
-    color: $txtcolor;
-   
-
+    
+   width: 50%;
+  text-align: center;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+      
 
 h1{
     font-size: 3.5rem;
-    color: $seccolor;
+color: $greycolor;
     margin-bottom: 2rem;
 
 }
 p{
     font-size: 1.5rem;
-    color: $txtcolor;
-    margin-bottom: 40px;
+   color: $greycolor;
+
+    margin-bottom: 20px;
 }
 button{
-    background-color: $pricolor;
+    background-color: $yellowcolor;
 
-    padding: 20px;
+  
     color: white;
-    border-radius: 25px;
+   
     text-align: center;
-    width: 278px;
-    font-size: 1.8rem;
+   
+
+    padding: 0.9rem 1.5rem;
+ 
+    border-radius: 5px;
+  
+    font-size: 1.5rem;
+
     transition: all 0.4s ease 0s;
     &:hover{
-        background: $yellowcolor;
+        background:#f1cc50;
 letter-spacing: 1px;
 -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
 -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
@@ -97,101 +84,149 @@ transition: all 0.4s ease 0s;
     }
 }
 }
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  
+    width: 43px;
+ 
+}
 
+.carousel-item{
+    img{
+        height: 100vh
+    }
+  
+} 
+.overlay:after {
+    content:"";
+    display:block;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:#06aed5cc;
+    
+  }
+
+  //color change
+.navbar-fixed-top.scrolled {
+    background-image: none;
+        background-color: #057f9b;
+        transition: background-color 1s ease-in;
+      }
 // sec section
 .sec_section{
-    padding: 200px;
-  position: relative;
-    width: 100%;
-    height: 1467px;
-    margin-bottom: 274px;
- 
-    .img1{
-        @include imgbackground("./../../../assets/img/female-doctor-surrounded-by-men.jpg") ;
-      
-        width: 41%;
-        height: 727px;
-        background-size: contain;
-  
-    }
+    margin-bottom: 100px;
+}
+
+.mrbottom_img{
+    margin-bottom: 20px
+}
     .txt{
       background-color: white;
-      border-bottom: 23px solid;
-        border-bottom-color:  $pricolor;
-        padding: 5rem;
-        font-size: 20px;
+      border-bottom: 15px solid;
+        border-top-color:  $pricolor;
+        padding: 2rem;
+     display: table;
         color: $pricolor;
-        width: 30%;
+       
         height: 349px;
-        font-size: 1rem;
-        position: absolute;
-        right: 31%;
-        bottom:53%;
+        font-size:1rem;
+        margin-bottom: 20px
+    }
+      
+        .txt p{
+            display: table-row
+        }
         h2{
-            color: $txtcolor
+            color: $txtcolor;
+            margin-bottom: 20px
         }
     
+   
+    
+ .txt:nth-of-type(2){
+        border-bottom: 15px  solid;
+        border-top-color: $seccolor;
+        color: $seccolor; 
+      
     }
-    & .txt:nth-of-type(2){
-        border-bottom: 23px  solid;
-        border-bottom-color: $seccolor;
-        color: $seccolor;
-        right: 30%;
-        bottom:3%;
-    }
-    .img2{
-        @include imgbackground("./../../../assets/img/pregnant-woman-with-doctor.jpg") ;
-        width: 41%;
-        height: 727px;
-        background-size: contain;
-    }
-}
+
+ // news
+
+
 .news{
-    margin-bottom: 274px;
+    height: auto;
+    margin-bottom: 100px;
+    width: 100%;
+    background-color: $pricolor;
+    padding:40px;
     h2{
         margin-bottom: 50px;
     }
 .img{
     width: 99%;
-    height: 195px;
-    margin-bottom: 20px;
+    padding: 20px;
  
+    margin-bottom: 20px;
+ border-radius: 3px;
+ background-color: white;
+ height: 325px;
+ box-shadow: 0px -5px 5px #888;
+cursor: pointer;
+transition: all 1s ease-in-out;
+&:hover{
+   transform: scale(1.05);
+} 
 img{
+ 
     width: 100%;
-    height: 100%
+    height: 66%;
+   
+    
+}
+.txt{
+    border-radius: 25px;
+    height: 106px;
+    border-bottom: white;
 }
 .txt ,.txt p a{
-padding: 10px;
+
 width: 100%;
-background-color: $seccolor;
-color: white;
+
+background-color: white;
+color:$txtcolor;
+font-size: 1rem;
+border-radius: 25px;
+border-bottom: white;
+
 & p:nth-of-type(1) a{
     color: $yellowcolor;
-font-weight: bold
+font-weight: bold;
+font-size: 1.2rem;
 }
 }
 }
 }
 
 // contact
+h3{
+    font-size: 2rem;
+}
 .contact{
-height: 400px;
-width: 100%;
+
 width: 0;
 height: 0;
 border-style: solid;
-border-width: 0 0 35vw 98.5vw;
+ border-width: 0 0 35vw 98.95vw;;
 border-color: transparent transparent $pricolor transparent;
 
 form{
- 
-
-
-
     background-color: white;
     width: 416px;
     padding: 20px;
     transform: translate(-231%,21%);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), ;
     textarea{
         height: 100px;
         max-height: 100px;
@@ -236,7 +271,7 @@ label{
 
     background-color: $pricolor;
     height: 121px;
-    width: 99.55%;
+ width: 99.97%;;
  color: white;
  .row div:nth-of-type(1){
      width: 100%;
@@ -259,4 +294,123 @@ width: 100%;
 text-align: center
  }
 }
+#cpy{
+    background-color: $seccolor;
+    width: 100%;
+    height: auto;
+    p{
+        color: white
+    }
+   
+}
+// =====================mediaqueries=======================
+@media only screen and (max-width: 600px) and(min-width:320px){
+ #carouselExampleControls{
+     display: none;
+ }
+ .header{
+    
+     @include imgbackground("../../../assets/img/header.jpg") ;
+background-size: cover;
 
+ }
+//   .header{
+//     .hdtxt{
+//         width:auto;
+//         padding:20px;
+//         padding-top: 30px;
+//         margin: 0 ;
+//     height: 50vh;
+//     text-align: center;
+//         h1{
+          
+//             color:  $pricolor;
+//         }
+//         p{
+//           text-align: center;
+  
+//         }
+//     button{
+//   transform: translate(50%,50%);
+//   background-color:  $pricolor;
+//   width: 200px;
+//  &:focus{
+//      background-color: #419b8d
+//  }
+  
+//     }
+//     }
+// display: block;
+
+//     .hdimg{
+//        display: none;
+  
+//     }
+//  nav{
+//      display: none;
+
+//  } 
+
+//   }
+//    sec_section
+.sec_section{
+    position: unset;
+    padding: 0;
+    height: auto;
+    margin-bottom: 20px;
+    .img1 ,.img2{
+        width: 100%;
+        height: 400px;
+        margin-bottom: 0
+        }
+        .txt{
+    position: unset;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: $greycolor;
+
+  height: auto
+}
+
+
+} 
+//news
+.news {
+    height: auto;
+    margin-bottom: 2.5rem;
+    .img{
+        height: auto;
+    }
+}
+//contact
+h3{
+    margin-bottom: 20px;
+}
+.contact{
+  
+    width: 100%;
+    height: auto;
+    border: none;
+    margin-bottom: 2.5rem;
+    form{
+        width: 100%;
+        transform: none;
+        height: auto;
+        input{
+            height: 3rem;
+            width: 100%;
+        }
+       
+    }
+}
+//footer
+.footer{
+    height: auto;
+    padding-top: 20px;
+}
+
+
+
+
+
+}
