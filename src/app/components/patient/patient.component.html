@@ -4,63 +4,95 @@
       <h2 class="text-center">Choose your doctor</h2>
     </div>
   </div>
-<section id="search">
-<!-- Search form -->
-<div class="container">
-  <div class="row">
+  <section id="search">
+    <!-- Search form -->
+    <div class="container">
+      <div class="row">
 
-      <div class="md-form active-pink active-pink-2 mb-3 mt-0 col-sm-12 col-md-6 offset-md-3">
-          <input class="form-control " type="text" placeholder="Search" aria-label="Search">
-        </div>
+        <div class="md-form active-pink active-pink-2 mb-3 mt-0 col-sm-12 col-md-7 offset-md-2">
 
 
+          <input [(ngModel)]="searchText" class="form-control " [(ngModel)]="searchText" type="text"
+            placeholder="Search" (keyup)="filterdoctor()">
+          <button type="submit" id="search"><i class="fa fa-search"></i></button>
 
-  </div>
-</div>
+          <ul>
+            <li *ngFor="let doctor of doctors | filter : searchText">
 
-</section>
 
-<!-- cards of doctors -->
-<section class="doctors">
-<div class="container">
-  <div class="row">
 
-      <div class="card" *ngFor="let doctor of doctors" >
-        
-          <div class="card-body">
-            <img class="img-fluid rounded" src={{doctor.src}}>
-            <div class="card-txt">
-                <h5 class="card-title">{{doctor.name}}</h5>
-                <div>
-                <p class="card-text">{{doctor.title}}</p>
-                <div id="rating">
-<div class="star full"></div>
-<div class="star full"></div>
-<div class="star full"></div>
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
+              <!-- cards of doctors -->
+              <section class="doctors">
+                <div class="container">
+                  <div class="row">
+
+                    <div class="doctor  col-sm-12" >
+         
+
+           
+          <div class=" item_doctor">
+
+                      <div class="img">
+                        <img class="img-fluid rounded  " src={{doctor.src}}>
+
+                      </div>
+                      <div class="item_doctor_txt ">
+                        <h5 class="card-title">{{doctor.name}}</h5>
+
+                        <!-- stars rate -->
+                        <div id="rating" *ngFor="let start of rates_array[i]">
+
+                          <div class="star full"></div>
+
+
+                        </div>
+                        <div id="rating" *ngFor="let start of opsite_rates_array[i]">
+
+                          <div class="star"></div>
+
+
+                        </div>
+                        <!-- ========== -->
+                        <p class="card-text"><i class="fas fa-stethoscope"></i>{{doctor.title}}</p>
+                        <p class="card-text"> <i class="fas fa-school"></i>{{doctor.rank}}</p>
+                        <p class="card-text"><i class="fas fa-money-bill-wave"></i>{{doctor.fees}}</p>
+
+                      </div>
+                      <button  class="btn book" (click)="selectdoctor(doctor)">Book</button>
+
+
+                    </div>
+                  </div>
+
+
+
+
 
 
                 </div>
-                <button routerLink="/calendar" class="btn btn-primary col-sm-12">Book</button>
-              </div>
-            </div>
-          
-        </div>
-      </div>
-
-
-
-
-
-
-  </div>
+       
 </div>
 
 
 
+      </section>
 
+
+
+
+
+  </li>
+  </ul>
+
+
+
+
+</div>
+
+
+
+</div>
+</div>
 
 </section>
 
@@ -87,23 +119,4 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
+</div>

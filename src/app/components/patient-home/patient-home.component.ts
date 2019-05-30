@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 import { HttpErrorResponse, HttpClient } from '@angular/common/http';
 declare var $: any;
@@ -15,7 +15,12 @@ export class PatientHomeComponent implements OnInit {
    news: string []; //news display to page
   ngOnInit() {
  
-
+//chang color while scrolling
+$(document).scroll(function () {
+  var $nav = $(".navbar-fixed-top");
+  $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+});
+//getting news data
   this.httpService.get('./assets/data/news.json').subscribe(
       data => {
         this.news = data as string [];	 // FILL THE ARRAY WITH DATA.
@@ -30,8 +35,5 @@ export class PatientHomeComponent implements OnInit {
   bookclick(){
     console.log("click")
   }
-
-  //gallery
-
 
 }

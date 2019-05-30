@@ -31,25 +31,25 @@
       <!-- =======================nav========================== -->
       <nav class="navbar-fixed-top navbar navbar-expand-sm fixed-top">
         <div class="container">
-          <a class="logo nav-brand" href="#">MoVo</a>
+          <a class="logo nav-brand" href="" >MoVo</a>
           <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-cont">
             <i class="fas fa-bars"></i>
           </button>
           <div>
-            <ul class="navbar-nav ml-auto collapse navbar-collapse" id="nav-cont">
+           <ul class="navbar-nav ml-auto collapse navbar-collapse" id="nav-cont"> 
               <li class="nav-item mr-4">
-                <a class="nav-link active " href="#home">Home</a></li>
+                <a class="nav-link active " href="home#main" >Home</a></li>
               <li class="nav-item mr-4">
-                <a class="nav-link " [routerLink]="['/']" fragment="news">News</a></li>
+                <a class="nav-link " href="home#news"  target="_self" >News</a></li>
 
               <li class="nav-item mr-4">
-                <a class="nav-link mr-4" href="#contact"> Contact</a>
+                <a class="nav-link mr-4" href="home#contact"> Contact</a>
               </li>
               <li class="nav-item" id="sign">
-                 <a class="nav-link" href="/sign"> Sign in</a>
+                 <a class="nav-link" > Sign in</a>
               </li>
 
-            </ul>
+            </ul> 
 
           </div>
         </div>
@@ -62,40 +62,56 @@
 
 
 
-  <div class="hdtxt" id="home">
+  <div class="hdtxt" >
     <h1>Lorem ipsum dolor</h1>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
 
-    <button (click)="bookclick()">Book now</button>
+    <button routerLink="/patient">Book now</button>
 
   </div>
 
 
   <!-- ========================second section======================== -->
-  <div class="sec_section">
+  <div class="sec_section" id="main">
     <div class="container">
       <div class="row">
-        <div class="img1 col-md-6 col-sm-12 mrbottom_img ">
-          <img src="../../assets/img/pregnant-woman-with-doctor.jpg" class="rounded  img-fluid">
-        </div>
-        <div class="txt col-md-6 col-sm-12">
-          <h2>Moving our country forward
+       
+        <div class="txt col-md-3 col-sm-12">
+          <img class="col-md-6" src="../../../assets/img/icon/magnifier.svg" alt="search">
+          <h2>Search
           </h2>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt quasi eius in eaque nobis incidunt nam vero
           nemo
           ipsam, dicta sed, cum ratione dolorem neque soluta maiores, accusamus quod fugit!
         </div>
-        <div class="txt col-md-6 col-sm-12">
-          <h2>Moving our country forward
-          </h2>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt quasi eius in eaque nobis incidunt nam vero
-          nemo
-          ipsam, dicta sed, cum ratione dolorem neque soluta maiores, accusamus quod fugit!
-        </div>
-        <div class="img2 col-md-6 col-sm-12 mrbottom_img">
-          <img src="../../assets/img/female-doctor-surrounded-by-men.jpg" class="rounded  img-fluid">
+        <div class="txt col-md-3 col-sm-12">
+            <img class="col-md-6" src="../../../assets/img/icon/doctor.svg" alt="search">
 
+          <h2>Choose doctor
+          </h2>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt quasi eius in eaque nobis incidunt nam vero
+          nemo
+          ipsam, dicta sed, cum ratione dolorem neque soluta maiores, accusamus quod fugit!
         </div>
+        <div class="txt col-md-3 col-sm-12">
+            <img class="col-md-6" src="../../../assets/img/icon/calendar-with-a-clock-time-tools.svg" alt="search">
+
+          <h2>Scan calinder
+          </h2>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt quasi eius in eaque nobis incidunt nam vero
+          nemo
+          ipsam, dicta sed, cum ratione dolorem neque soluta maiores, accusamus quod fugit!
+        </div>
+        <div class="txt col-md-3 col-sm-12">
+            <img class="col-md-6" src="../../../assets/img/icon/accepted-notes.svg" alt="search">
+
+          <h2>Confirm
+          </h2>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt quasi eius in eaque nobis incidunt nam vero
+          nemo
+          ipsam, dicta sed, cum ratione dolorem neque soluta maiores, accusamus quod fugit!
+        </div>
+      
 
 
 
@@ -187,6 +203,11 @@
 
 
 <!-- ====================gallarey===================== -->
+<div class="container">
+  <div class="row">
+    <h3>Medical services that you can trust</h3>
+  </div>
+</div>
 
 <!-- Grid row -->
 <div class="row">
@@ -195,44 +216,40 @@
   <!-- Grid column -->
 
 </div>
-<!-- Grid row -->
+
 
 <!-- Grid row -->
 <div class="gallery" id="gallery">
 
   <!-- Grid column -->
-  <div class="mb-3 pics animation all 2">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg" alt="Card image cap">
+  <div class="mb-3 ">
+    <img class="img-fluid" src="../../../assets/img/gal3.jpg" alt="Card image cap">
   </div>
   <!-- Grid column -->
 
   <!-- Grid column -->
-  <div class="mb-3 pics animation all 1">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain1.jpg" alt="Card image cap">
+  <div class="mb-3">
+    <img class="img-fluid" src="../../../assets/img/gal1.jpg" alt="Card image cap">
   </div>
   <!-- Grid column -->
 
   <!-- Grid column -->
-  <div class="mb-3 pics animation all 1">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain2.jpg" alt="Card image cap">
+  <div class="mb-3">
+    <img class="img-fluid" src="../../../assets/img/gal2.jpg" alt="Card image cap">
   </div>
   <!-- Grid column -->
 
   <!-- Grid column -->
-  <div class="mb-3 pics animation all 2">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
+
+  <!-- Grid column -->
+  <div class="mb-3">
+    <img class="img-fluid" src="../../../assets/img/main.jpg" alt="Card image cap">
   </div>
   <!-- Grid column -->
 
   <!-- Grid column -->
-  <div class="mb-3 pics animation all 2">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
-  </div>
-  <!-- Grid column -->
-
-  <!-- Grid column -->
-  <div class="mb-3 pics animation all 1">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg" alt="Card image cap">
+  <div class="mb-3">
+    <img class="img-fluid" src="../../../assets/img/news2.jpg" alt="Card image cap">
   </div>
   <!-- Grid column -->
 
@@ -257,7 +274,7 @@
         <div class="form-group">
           <label class="control-label col-sm-2" for="pwd">Password:</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="pwd">
+            <input type="password" class="form-control" id="pwd" required autocomplete>
           </div>
         </div>
 
