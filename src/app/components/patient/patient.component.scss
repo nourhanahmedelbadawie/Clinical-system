@@ -1,52 +1,135 @@
-@import './../../..//assets/sass/global/variables' ;
+@import '../../../assets/sass/global/variables' ;
 .page{
-background-color: $greycolor;
-
-height: auto;
+// background-color: $greycolor;
+width: 98vw;
+height: 100vh;
 padding-top: 100px;
 font-family: sans;
 h2{
     width: 100%;
     margin-bottom: 50px;
+    font-weight: bold;
 }
 }
 
 #search{
-margin-bottom: 50px;
+margin-bottom: 100px;
+position: relative;
+border-radius: 20px;
+.form-control{
+    background-color: white;
+    border-radius: 25px;
+border: none;
+padding: 15px;
+margin-bottom: 40px;
+
 
 }
-
-.card{
+button#search{
     background-color: white;
-    box-shadow: 0 0 1px 1px rgb(204, 202, 202);
+    color: gray;
+    font-size: 19px;
+    position: absolute;
+    top: 12px;
+    float: right;
+    cursor: pointer;
+    right: 28px;
+    cursor: pointer;
+    &:hover{
+        color: $pricolor;
+    }
+}
+}
+.doctor{
+    height: auto;
+    background-color:white;
+    border: 0.5px solid gray;
+    margin-bottom: 20px;
+    padding: 20px;
     border-radius: 5px;
-    margin-bottom: 50px;
-    .card-body{
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.25);
+        .item_doctor{
         display: flex;
+    }
+.img{
+    width: 22%;
+    margin-right: 10px;
+    img{
+       width: 100%;
+       height: auto;
+    }
+}
+.item_doctor_txt{
+    width:40%;
+    h5{
+        font-weight: bold;
+        color: $txtcolor;
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    i{
+        color:$pricolor;
+        margin-right:5px;
+        font-size: 12px;
         
-        img{
-            width: 30%;
-            height: 100%;
-          margin-right: 40px;
-        
-        }
-   
-
-
-        .btn-primary{
-            background-color: $seccolor;
-            border: none;
-           color:white;
-           font-weight: bold;
-           font-size: 1rem;
-           padding: 11px;
-           margin:0 auto;
-        }
+    }
+    p{
+        color: #7c7c85;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+}
+button.book{
+    padding: 12px 36px;
+    height: 46px;
+    color: white;
+    background-color: $yellowcolor;
+    transform: translate(50%,140%);
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    &:hover{
+        background-color: #ffc60b;
+        color: aliceblue;
+     
+        box-shadow: 0px 3px 8px rgba(0,0,0,0.25);
 
     }
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  #rating{
-font-size: 48px;
+font-size: 20px;
 display: inline-flex;
 & > .star::after{
     content: '\f005';
@@ -56,7 +139,7 @@ display: inline-flex;
 }
 & > .star.full::after{
     content: '\f005';
-    color:yellow;
+    color:rgb(253, 238, 29);
 
 }
 
@@ -64,5 +147,6 @@ display: inline-flex;
 
 
 
-    }
+    
+ 
 }

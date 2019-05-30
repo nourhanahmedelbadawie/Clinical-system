@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MainComponent } from './components/main/main.component';
 import { PatientHomeComponent } from './components/patient-home/patient-home.component';
 import { PatientComponent } from './components/patient/patient.component';
 import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
@@ -11,9 +10,8 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { SignInComponent } from './components/auth/sign-in/sign-in.component';
 import { CalenderComponent } from './components/calender/calender.component';
 const routes: Routes = [
-  {
-    path:'main',loadChildren:'',component:MainComponent}
-    ,{path:'',redirectTo:'main',pathMatch:'full'},
+  
+    {path:'',redirectTo:'home',pathMatch:'full'},
     {path:'home',component:PatientHomeComponent} ,
     {path:'patient',component:PatientComponent},
     {path: 'signup',component: SignUpComponent },

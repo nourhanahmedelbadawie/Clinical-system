@@ -1,15 +1,29 @@
 [{
-"name":"Lorem Ipsum ",
-"rate":"5",
-"title":"simply dummy",
-"fees":"100",
-"rank":"readable content"  ,
-"src":"../../assets/img/1.jpg"  
+"name":"Mohamed Ahmed ",
+"title":"Profeesor",
+"rate":"2",
+"fees":"100$",
+"rank":"BSC"  ,
+"src":"../../assets/img/Doctor.png"  
 },{
-    "name":"Lorem Ipsum ",
-    "rate":"6",
-    "title":"simply dummy",
-    "fees":"200",
-    "rank":"readable content" ,
-    "src":"../../assets/img/1.jpg"    
+    "name":"Ali Mohamed ",
+    "rate":"3",
+    "title":"Specialist",
+    "fees":"200$",
+    "rank":"MBA" ,
+    "src":"../../assets/img/Doctor.png"    
+},{
+    "name":"Mostafa Ahmed ",
+    "rate":"3",
+    "title":"Specialist",
+    "fees":"200$",
+    "rank":"MBA" ,
+    "src":"../../assets/img/Doctor.png"    
+},{
+    "name":"Amr Mohamed ",
+    "rate":"3",
+    "title":"Specialist",
+    "fees":"200$",
+    "rank":"MBA" ,
+    "src":"../../assets/img/Doctor.png"    
 }]

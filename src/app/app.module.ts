@@ -9,15 +9,24 @@ import { SuccessComponent } from './components/success/success.component';
 import { SignInComponent } from './components/auth/sign-in/sign-in.component';
 import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { MainComponent } from './components/main/main.component';
 import {CalenderComponent} from './components/calender/calender.component';
+=======
+
+>>>>>>> e44fe86ce362161be9f79d8a460e49a2b31dc25a
 import { PatientHomeComponent } from './components/patient-home/patient-home.component';
 import { PatientComponent } from './components/patient/patient.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+<<<<<<< HEAD
 // import { CalenderComponent} from './components/calender/calender.component'
+=======
+import { HttpClientModule } from '@angular/common/http';
+import { FilterPipe } from './filter.pipe';
+>>>>>>> e44fe86ce362161be9f79d8a460e49a2b31dc25a
 
 import { environment } from '../environments/environment' ;
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -32,10 +41,14 @@ import { AuthService } from './service/authservice.service';
     DashboardComponent,
     ForgetPasswordComponent,
     VerifyEmailComponent,
-    MainComponent,
+   
     PatientHomeComponent,
     PatientComponent,
+<<<<<<< HEAD
     CalenderComponent
+=======
+    FilterPipe
+>>>>>>> e44fe86ce362161be9f79d8a460e49a2b31dc25a
   ],
   imports: [
     BrowserModule,
@@ -45,8 +58,12 @@ import { AuthService } from './service/authservice.service';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
+<<<<<<< HEAD
     NgbModule,
     HttpClientModule,
+=======
+    HttpClientModule 
+>>>>>>> e44fe86ce362161be9f79d8a460e49a2b31dc25a
   ],
   providers: [AuthService,AngularFireDatabase],
   bootstrap: [AppComponent]
