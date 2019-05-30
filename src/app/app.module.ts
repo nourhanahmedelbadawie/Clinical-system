@@ -10,15 +10,19 @@ import { SignInComponent } from './components/auth/sign-in/sign-in.component';
 import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
 import { MainComponent } from './components/main/main.component';
+import {CalenderComponent} from './components/calender/calender.component';
 import { PatientHomeComponent } from './components/patient-home/patient-home.component';
 import { PatientComponent } from './components/patient/patient.component';
 import { AngularFireModule } from '@angular/fire';
-import { environment } from 'src/environments/environment';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+// import { CalenderComponent} from './components/calender/calender.component'
 
-
+import { environment } from '../environments/environment' ;
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './service/authservice.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +34,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     VerifyEmailComponent,
     MainComponent,
     PatientHomeComponent,
-    PatientComponent
+    PatientComponent,
+    CalenderComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +44,11 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    NgbModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthService,AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

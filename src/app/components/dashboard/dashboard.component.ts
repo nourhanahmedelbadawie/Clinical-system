@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/service/authservice.service';
+import { UsersService } from '../../service/users.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,15 +9,20 @@ import { AuthService } from 'src/app/service/authservice.service';
 })
 export class DashboardComponent implements OnInit {
   public user;
-  constructor(public authservice:AuthService) { 
-    this.user=this.authservice.userData;
-    console.log(this.user)
-  }
-
-  ngOnInit() {
-  }
-  SignOut(){
-    this.authservice.SignOut();
-  }
+  public userDataDatails={};
+  
+  
+    constructor(public authservice:AuthService,private userData:UsersService) { 
+    }
+  
+    ngOnInit() {
+      this.userDataDatails=this.userData.getUserData()
+      console.log( this.userDataDatails[0].phoneNumber);
+      
+        }
+    SignOut(){
+      this.authservice.SignOut();
+    }
+  
 
 }

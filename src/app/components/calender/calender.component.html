@@ -1,0 +1,6 @@
+<ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+<pre>Month: {{ date.month }}.{{ date.year }}</pre>
+<pre>Model: {{ model | json }}</pre>
+<span>{{model | json}}</span>
+<input type="text" ngbDatepicker (select)="selectToday($event)"/>
+<ngb-datepicker (select)="selectToday($event)"></ngb-datepicker>
