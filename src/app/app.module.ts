@@ -19,6 +19,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterPipe } from './filter.pipe';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CalendardetailComponent } from './components/calendardetail/calendardetail.component';
+
 
 
 @NgModule({
@@ -33,7 +37,10 @@ import { FilterPipe } from './filter.pipe';
    
     PatientHomeComponent,
     PatientComponent,
-    FilterPipe
+    FilterPipe,
+    CalendarComponent,
+    CalendardetailComponent
+
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,8 @@ import { FilterPipe } from './filter.pipe';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
-    HttpClientModule 
+    HttpClientModule ,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

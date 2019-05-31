@@ -1,0 +1,26 @@
+
+<section class="calendar">
+<div class="container">
+<div class="row">
+
+        <app-calendardetail class="col-md-6 col-sm-12"></app-calendardetail>
+
+
+<div class="calendarview col-md-6 col-sm-12">
+<div class="detail">
+
+
+ 
+<ngb-datepicker #dp [markDisabled]="markDisabled" [(ngModel)]="model" (select)="dateselect($event)" (navigate)="date = $event.next"></ngb-datepicker>
+
+
+</div>
+
+</div>
+
+
+
+</div>
+</div>
+</section>
+

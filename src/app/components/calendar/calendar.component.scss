@@ -1,0 +1,121 @@
+@import '../../../assets/sass/global/variables' ;
+
+ 
+ div.ngb-dp-weekday {
+    width: 2rem;
+    height: 6rem;
+}
+
+//removep padding
+div.ngb-dp-month:first-child .ngb-dp-week {
+  padding-left:0
+}    
+div.ngb-dp-month:last-child .ngb-dp-week {
+    padding-right:0
+  }
+  .ngb-dp-month {
+    padding-left: 0;
+  }
+
+
+
+
+.ngb-datepicker{
+    font-family: sans;
+    border-radius: 25px;
+}
+.ngb-dp-month {
+   width:50vh;
+   
+}
+.ngb-dp-header {
+    width: 40vw
+}
+
+
+
+//borad of months
+.ngb-dp-month {
+    padding-left: 0;
+    width: 40vw;
+    border: none;
+    background-color: #F1F1F1;
+}
+
+//days in board
+
+div.ngb-dp-day, .ngb-dp-week-number{
+    width: 9rem;
+    height: 6rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 31px 29px;
+    border: 1px solid gainsboro;
+    border-right: none;
+    border-bottom: none;
+}
+.btn-light{
+    color: rgb(75, 73, 73)
+}
+
+
+//week
+div.ngb-dp-weekday {
+    color: white;
+    font-size: 1.3rem;
+}
+div.ngb-dp-weekday {
+    width: 6rem;
+    height: 2rem;
+
+}
+.ngb-dp-weekday {
+    background-color: $yellowcolor;
+ font-weight: bolder;
+    color: white
+}
+//naviagete month-year
+.ngb-dp-navigation-chevron{
+    color:white;
+    &:hover{
+        color: $yellowcolor;
+    }
+}
+.ngb-datepicker-navigation-select {
+width: 0;
+
+    span{
+ 
+        margin-left: 75px;
+        border: none;
+        height: 13px;
+    }
+
+}
+ngb-datepicker-navigation {
+   
+    height: 100px;
+}
+ngb-datepicker-navigation {
+ 
+    background: $pricolor;
+}
+.ngb-dp-navigation-select select:nth-of-type(2){
+    background-color: white;
+    width:50%;
+    border: none;
+   color:$seccolor;
+   font-weight: bold;
+   margin-left: 20px;
+   font-size: 14px;
+   
+}
+.ngb-dp-navigation-select select:nth-of-type(1){
+    background-color: white;
+   font-weight: bold;
+    width: 50%;
+    color:$seccolor;
+    border: none;
+    font-size: 18px;
+    color: $txtcolor;
+}

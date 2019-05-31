@@ -1,9 +1,8 @@
 @import '../../../assets/sass/global/variables' ;
 .page{
-// background-color: $greycolor;
-width: 98vw;
-height: 100vh;
-padding-top: 100px;
+overflow: hidden;
+
+padding-top: 50px;
 font-family: sans;
 h2{
     width: 100%;
@@ -13,6 +12,7 @@ h2{
 }
 
 #search{
+   
 margin-bottom: 100px;
 position: relative;
 border-radius: 20px;
@@ -31,7 +31,7 @@ button#search{
     font-size: 19px;
     position: absolute;
     top: 12px;
-    float: right;
+  
     cursor: pointer;
     right: 28px;
     cursor: pointer;
@@ -80,11 +80,11 @@ button#search{
     }
 }
 button.book{
-    padding: 12px 36px;
+    padding: 0px 30px;
     height: 46px;
     color: white;
     background-color: $yellowcolor;
-    transform: translate(50%,140%);
+
     font-weight: bold;
     font-size: 1rem;
     letter-spacing: 2px;
@@ -97,7 +97,23 @@ button.book{
     }
 }
 }
+//=====================media query======================
+@media only screen and (max-width: 600px) and(min-width:320px){
+button.book{
+    transform:none;
+}
 
+
+
+
+
+
+
+
+
+
+
+}
 
 
 
