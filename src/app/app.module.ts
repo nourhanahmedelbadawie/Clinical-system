@@ -9,14 +9,14 @@ import { SuccessComponent } from './components/success/success.component';
 import { SignInComponent } from './components/auth/sign-in/sign-in.component';
 import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
-
+import {CalenderComponent} from './components/calender/calender.component';
 import { PatientHomeComponent } from './components/patient-home/patient-home.component';
 import { PatientComponent } from './components/patient/patient.component';
 import { AngularFireModule } from '@angular/fire';
-import { environment } from 'src/environments/environment';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 import { HttpClientModule } from '@angular/common/http';
 import { FilterPipe } from './filter.pipe';
 import { CalendarComponent } from './components/calendar/calendar.component';
@@ -24,7 +24,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendardetailComponent } from './components/calendardetail/calendardetail.component';
 
 
-
+import { environment } from '../environments/environment' ;
+import { AuthService } from './service/authservice.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,9 @@ import { CalendardetailComponent } from './components/calendardetail/calendardet
     PatientComponent,
     FilterPipe,
     CalendarComponent,
-    CalendardetailComponent
+    CalendardetailComponent,
+
+
 
   ],
   imports: [
@@ -53,7 +56,7 @@ import { CalendardetailComponent } from './components/calendardetail/calendardet
     HttpClientModule ,
     NgbModule
   ],
-  providers: [],
+  providers: [AuthService,AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
