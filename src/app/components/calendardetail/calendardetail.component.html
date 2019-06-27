@@ -1,6 +1,128 @@
 <div class="page">
-  <p>this is date</p>
-  <p>{{dateselected.year}}</p>
-  <p>{{dateselected.month}}</p>
-  <p>{{dateselected.day}}</p>
+  <div id="header">
+      <p>Book now your visit</p>
+      <p>
+        
+          <span><i class="fas fa-calendar-alt"></i>{{dateselected.day}}</span>/
+          <span>{{dateselected.month}}</span>/
+          {{dateselected.year}}
+      </p>
+    
+  </div>
+  <div id="doc">
+    <!-- (doctor!= null && doctor.id>0) ?doctor : nodoc -->
+  <div class="doc col-12">
+    <div *ngIf="doctor; else nodoc" style="display: flex;">
+
+      
+<div class="img" *ngIf="doctor.src!=''; else noimg">
+  <img class="img-fluid" src={{doctor.src}}>
+
+</div>
+<!-- ============================================ -->
+
+
+
+
+<ng-template #noimg>
+
+<div class="img" >
+
+<img   class="img-fluid rounded  " src="../../../assets/img/nn.png">
+</div>
+
+
+
+
+</ng-template>
+
+
+
+<!-- ========================================  -->
+    <div class="data">
+    <p>{{doctor.name}}</p>
+    <p><i *ngIf="doctor.name" style="margin-right:5px;color:#ffc60b;" 
+      class="fas fa-stethoscope"></i>{{doctor.title}}</p>
+    <p><i *ngIf="doctor.rank" style="margin-right:5px;color:#ffc60b;" 
+      class="fas fa-graduation-cap"></i>{{doctor.rank}}</p>
+
+    </div>
+
+      <!-- ========================empty======================== -->
+
+  
+
+</div>
+<ng-template #nodoc>
+    <div  class="empty text-center"
+     style="margin: 0 auto; color: gray;font-size: 1rem;font-weight: lighter;">
+
+      <p style="     color:rgb(236, 27, 27);font-size: 1rem;font-weight: bold;">You didn't choose any doctor  </p>
+       <!-- ==== if empty -->
+
+    <!-- <p  style="margin-bottom: 15px; color:rgb(236, 27, 27);font-size: 1rem;font-weight: bold;">
+      You should choose doctor first !</p> -->
+
+      
+      <a routerLink="/side/patient">Choose doctor</a>
+
+    </div>
+</ng-template>
+  </div>
+<div class="detail">
+  <h2>Select date</h2>
+
+ 
+
+
+
+  <!-- data display -->
+<div *ngIf="doctorAppointments; else empty">
+
+<div *ngIf="!show"> 
+  <div  class="docdate" *ngFor="let i of doctorAppointments">
+    <div id={{i}}>
+
+        <p ><i class="fas fa-clock"></i>{{i}} </p>
+        <button  (click)="showauthBook(i)">Book</button>
+        
+      </div>
+
+</div>
+</div> 
+
+
+<!-- ===================overlay sign in============================= -->
+<div *ngIf="show==true"> 
+  <div  class="docdate" *ngFor="let i of appdisplay">
+      <div id={{i}}>
+  
+          <p ><i class="fas fa-clock"></i>{{i}} </p>
+<button type="button" class="btn btn-primary" (click)="openModalWithComponent()">Book</button>
+
+</div> 
+</div>
+</div>
+<!-- ============================== -->
+</div>
+<ng-template #empty>
+<p *ngIf="!firstempty" class="empty text-center"
+ style=" color: #a5a3a3;font-size: 1.4rem;font-weight: bold;">
+Book appointement</p>
+</ng-template>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
 </div>

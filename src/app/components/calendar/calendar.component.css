@@ -1,0 +1,112 @@
+div.ngb-dp-weekday {
+  width: 2rem;
+  height: 6rem;
+}
+
+div.ngb-dp-month:first-child .ngb-dp-week {
+  padding-left: 0;
+}
+
+div.ngb-dp-month:last-child .ngb-dp-week {
+  padding-right: 0;
+}
+
+.ngb-dp-month {
+  padding-left: 0;
+  width: 100%;
+}
+
+ngb-datepicker {
+  font-family: sans;
+  border-radius: 25px;
+  max-width: 100%;
+}
+
+.ngb-dp-month {
+  padding-left: 0;
+  border: none;
+  background-color: #F1F1F1;
+}
+
+div.ngb-dp-day, .ngb-dp-week-number {
+  width: 14.3%;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 25px 25px;
+  border: 1px solid gainsboro;
+  border-right: none;
+  border-bottom: none;
+}
+
+div.ngb-dp-day {
+  padding: 31px 0 50px 24px;
+}
+
+.btn-light {
+  color: #4b4949;
+}
+
+.bg-primary {
+  background-color: #FFB33A !important;
+}
+
+div.ngb-dp-weekday {
+  color: white;
+  font-size: 1.05rem;
+}
+
+div.ngb-dp-weekday {
+  width: 6rem;
+  height: 2rem;
+}
+
+.ngb-dp-weekday {
+  background-color: #FFB33A;
+  font-weight: bolder;
+  color: white;
+}
+
+.ngb-dp-navigation-chevron {
+  color: white;
+}
+
+.ngb-dp-navigation-chevron:hover {
+  color: #FFB33A;
+}
+
+.ngb-datepicker-navigation-select {
+  width: 0;
+}
+
+.ngb-datepicker-navigation-select span {
+  margin-left: 75px;
+  border: none;
+  height: 13px;
+}
+
+ngb-datepicker-navigation {
+  height: 100px;
+}
+
+ngb-datepicker-navigation {
+  background: #06AED5;
+}
+
+.ngb-dp-navigation-select select:nth-of-type(2) {
+  background-color: white;
+  border: none;
+  color: #345288;
+  font-weight: bold;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.ngb-dp-navigation-select select:nth-of-type(1) {
+  background-color: white;
+  font-weight: bold;
+  color: #345288;
+  border: none;
+  font-size: 18px;
+  color: #606066;
+}
+/*# sourceMappingURL=calendar.component.css.map */

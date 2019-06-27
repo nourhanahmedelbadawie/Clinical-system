@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { HttpErrorResponse, HttpClient } from '@angular/common/http';
-
-
+import { Component, OnInit, } from '@angular/core';
+import { HttpErrorResponse, HttpClient, HttpHeaders } from '@angular/common/http';
+import { CalendarService } from 'src/app/service/calendar.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { GuardCalSerService } from 'src/app/service/guard-cal-ser.service';
 
 @Component({
   selector: 'app-patient',
@@ -9,32 +10,84 @@ import { HttpErrorResponse, HttpClient } from '@angular/common/http';
   styleUrls: ['./patient.component.scss']
 })
 export class PatientComponent implements OnInit {
+  public searchText
+  loading = true
+
 
 doctors:string[]
 rates_array:any[]=[]
 opsite_rates_array:any[]=[]
+
+backend={name:"test"}
  filterdoctor(){
   console.log("onkey up")
   }
-  constructor(private httpService:HttpClient ) {
+  constructor(private httpService:HttpClient ,
+    private calserv:CalendarService,
+    private _route: ActivatedRoute,
+              private _router: Router,
+             private calguard_ser:GuardCalSerService
+              ) {
     this.screenhgt=screen.height
     console.log(this.screenhgt)
+
    }
-screenhgt:any
+screenhgt:any 
+private  httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Accept': 'application/json'
+    // 'Authorization': 'my-auth-token'
+  }),
+
+};
   ngOnInit() {
 
+//testing backend ===================================================
+
+    // this.httpService.post<any>("http://172.16.2.28:8069/clinical_management_system/schedule_visit/"
+    // ,JSON.stringify({name:"nourhan"}),this.httpOptions).subscribe(res=>{
+    //   console.log("res 22",res)
+    // })
+
+// this.httpService.get("http://172.16.2.28:8069/clinical_management_system/patient?patient_id=1").subscribe(res=>{
+//   console.log("res55",res)
+ 
+// })
+  
+  // data doctor= http://172.16.2.28:8069/clinical_management_system/patient?patient_id=5
+
+    // data doctor= http://172.16.7.56:8069/clinical_management_system/doctors
+    // './assets/data/doctors.json'
+    //========================================================================
+
+
    let This=this
-  this.httpService.get('./assets/data/doctors.json').subscribe(
+  this.httpService.get('http://172.16.2.28:8069/clinical_management_system/doctors/').subscribe(
     data => {
-      this.doctors = data as string [];	 // FILL THE ARRAY WITH DATA.
+      this.loading = false //animation
+
+
+      this.doctors = data as string [];	
+      console.log(data)          // FILL THE ARRAY WITH DATA.
       this.doctors.forEach(function(doctor:any){
         let len:number=parseInt(doctor.rate)
         var array = new Array(len)
         This.rates_array.push(array as any)
+        doctor.fullrate= This.rates_array
+       
         This.opsite_rates_array.push(new Array(5-parseInt(doctor.rate)))
+        doctor.opsrat=This.opsite_rates_array
+        console.log("doctor.rate",doctor.fullrate)
+        console.log("doctor.rate", doctor.opsrat)
+       
       })
-    
-      console.log("this rates => ",this.opsite_rates_array)
+     
+
+  
+
+
+      console.log("this rates => ",this.rates_array)
 
 
  
@@ -65,6 +118,7 @@ screenhgt:any
 
   
 checkRates(item,doctor){
+  debugger
 if(item.isClicked==true){
 
   return
@@ -78,6 +132,7 @@ doctor.rate=item.id
         this.stars[i].isClicked = true;
         }
     }
+    
 //     removerate(item,doctor){
 // if(this.stars[item.id].isClicked!==true){
 //   item.isClicked=false;
@@ -103,7 +158,9 @@ doctor.rate=item.id
 //     }
 //select doctor
 selectdoctor(doctor){
-  console.log(doctor)
+  this._router.navigate(['side/patient/calendar',doctor.id])
+  this.calserv.selectDoctor(doctor)
+ this.calguard_ser.select_btnclicked=true 
 }
 
 

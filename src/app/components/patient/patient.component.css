@@ -1,0 +1,134 @@
+.page {
+  overflow: hidden;
+  padding-top: 50px;
+  font-family: sans;
+}
+
+.page h2 {
+  width: 100%;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+#search {
+  margin-bottom: 100px;
+  position: relative;
+  border-radius: 20px;
+}
+
+#search .form-control {
+  background-color: white;
+  border-radius: 25px;
+  border: none;
+  padding: 15px;
+  margin-bottom: 40px;
+}
+
+#search button#search {
+  background-color: white;
+  color: gray;
+  font-size: 19px;
+  position: absolute;
+  top: 12px;
+  cursor: pointer;
+  right: 28px;
+  cursor: pointer;
+}
+
+#search button#search:hover {
+  color: #06AED5;
+}
+
+.doctor {
+  height: auto;
+  background-color: white;
+  border: 0.5px solid gray;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.doctor .item_doctor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.doctor .img {
+  width: 22%;
+  margin-right: 10px;
+}
+
+.doctor .img img {
+  width: 100%;
+  height: auto;
+}
+
+.doctor .item_doctor_txt {
+  width: 40%;
+}
+
+.doctor .item_doctor_txt h5 {
+  font-weight: bold;
+  color: #606066;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.doctor .item_doctor_txt i {
+  color: #06AED5;
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+.doctor .item_doctor_txt p {
+  color: #7c7c85;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.doctor button.book {
+  padding: 0px 30px;
+  height: 46px;
+  color: white;
+  background-color: #FFB33A;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.doctor button.book:hover {
+  background-color: #ffc60b;
+  color: aliceblue;
+  -webkit-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+@media only screen and (max-width: 600px) and (min-width: 320px) {
+  button.book {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+#rating {
+  font-size: 20px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+#rating > .star::after {
+  content: '\f005';
+  color: #7777;
+  font-family: FontAwesome;
+  cursor: pointer;
+}
+
+#rating > .star.full::after {
+  content: '\f005';
+  color: #fdee1d;
+}
+/*# sourceMappingURL=patient.component.css.map */

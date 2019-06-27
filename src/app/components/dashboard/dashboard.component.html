@@ -2,21 +2,29 @@
   <!-- Sidebar navigation -->
   <div class="container-fluid">
     <div class="row">
-    <nav class="col-md-2 d-md-block sidebar ">
+    <nav class="col-lg-2 d-md-block sidebar col-sm-12 ml-lg-4 fixed ">
     <div class="sidebar-sticky">
-    <ul class="nav flex-column">
+    <ul class="nav flex-column ">
       <!-- your image -->
     <li class="nav-item">
-    <div class="avatar mx-auto white p-4">
-        <img src="https://mdbootstrap.com/img/Photos/Avatars/img(31).jpg" class="img-fluid z-depth-1 rounded-circle"
+    <!-- <div class="avatar mx-auto white" *ngIf="(downloadURL!=null && downloadURL.length>0) "> -->
+          <div  *ngIf="downloadURL | async; let url" class="rounded-circle text-center widthfull">
+                  <img [src]="url" alt="Image from AngularFireStorage" class=" img-fluid z-depth-1 imgg Responsive image ">
+          <!-- </div> -->
+          <!-- <button (click)="change()">change image</button> -->
+        <!-- <img src={{userDataDatails[0].imageUploaded}} class="img-fluid z-depth-1 rounded-circle"
         alt="Responsive image">
-  
+    -->
+    </div>
+    <div  *ngIf="(downloadURL==null || downloadURL.length==0) " class="text-center py-3">
+      <img src="../../../assets/img/img.png" width= 100px>
+
     </div>
     
     </li>
     <!-- your name -->
     <li class="nav-item text-center name">
-        {{userDataDatails[0].username}}
+        {{userDataDatails[0].name}}
     </li>
     <!-- your email -->
     <li class="nav-item text-center">
@@ -24,24 +32,202 @@
     </li>
     <!-- your phone -->
     <li class="nav-item text-center">
-        {{userDataDatails[0].phoneNumber}}
+        {{userDataDatails[0].phone}}
     </li>
     <!-- your city -->
     <li class="nav-item text-center">
         {{userDataDatails[0].city}}
     </li>
     <!-- Calling SignOut() Api from AuthService -->
-    <li class="nav-item fixed-bottom">
-    <a class="nav-link" (click)="SignOut()">
-    <i class="fas fa-sign-out-alt"></i>Log out
-    </a>
-    </li>
     </ul>
     </div>
     </nav>
     <!-- Main content -->
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-    <!--  -->
+    <main role="main" class="col-sm-12 ml-lg-auto  col-lg-9 py-4 ">
+        <!-- draft visit -->
+            <div class="card bg-light mb-3" >
+                <div class="card-header colheader">Draft Visits</div>
+                <div class="card-body">
+                   <!-- <p class="card-text"> {{draftvisit | json}}</p> -->
+                   <div class=" row p-2 bg  no-gutters  d-sm-none d-lg-flex"> 
+                      <span class="headerline col-3">Visit Time</span>
+                      <span class="headerline col-3">Visit Doctor</span>
+                      <span class="headerline col-2 ">Type Of Visit</span>
+          
+                  </div>
+                  <!-- <p class="card-text"> {{draftvisit | json}}</p> -->
+                  <div *ngIf="draftvisit.length > 0;else nonevisitst" class="row bor">
+                  
+                  <div *ngFor="let draft of draftvisit" class="row   py-1 col-lg-12">
+                      <div class=" row py-2 col-lg-12 col-sm-5 d-lg-none  "> 
+                          <span class="headerline col-lg-4 col-sm-12 text-sm-left ">Visit Time : </span>
+                          <span class="headerline col-lg-4 col-sm-12 text-sm-left">Visit Doctor : </span>
+                          <span class="headerline col-lg-2 col-sm-12 text-sm-left">Type Of Visit : </span>
+                  
+                          <span class="headerline col-sm-12 text-sm-left ">Confirm : </span>
+    
+                      </div>
+                    
+                  <div class="row col-sm-7 col-lg-12 py-sm-2">
+                    <div  class="col-lg-3 col-sm-12"><span class="graycolor">{{ draft.visittime}}</span></div>
+                    <div  class="col-lg-3 col-sm-12 pl-4"> <span class="graycolor">{{ draft.visitdoctor}}</span></div>
+                  <!-- </div>
+                  <div class="row"> -->
+                    <div class="col-lg-4 col-sm-12 pl-lg-5"><span class="graycolor">{{ draft.visittype}}</span></div>
+                    <!-- <a class="col-lg-2 pointer" (click)="tohisclinicalsheet(draft.visitid)">Medical Sheet</a> -->
+
+                    
+                    <div class="col-lg-2"><a *ngIf="!canceled[draft.visitid]"  (click)="cancel(draft.visitid)"><i class="fas fa-times ml-lg-5 pl-lg-5"></i></a><div  *ngIf="canceled[draft.visitid] && done"><span class="graycolor">Reservation Cancelled</span></div></div>
+                  </div>
+
+              
+              
+                    
+                  </div>
+                    <ng-template #nonevisitst>
+                      <p>No visits found</p>
+                    </ng-template>
+                  </div>
+                </div>
+              </div>
+              <!-- confirmed visit -->
+              <div class="card bg-light mb-3" >
+                  <div class="card-header colheader">Confirmed Visits</div>
+                  <div class="card-body">
+                     <!-- <p class="card-text"> {{draftvisit | json}}</p> -->
+                     <div class=" row p-2 bg  no-gutters  d-sm-none d-lg-flex"> 
+                        <span class="headerline col-3">Visit Time</span>
+                        <span class="headerline col-3">Visit Doctor</span>
+                        <span class="headerline col-2 ">Type Of Visit</span>
+                     
+                      
+                    </div>
+                    <!-- <p class="card-text"> {{draftvisit | json}}</p> -->
+                    <div *ngIf="confirmedvisit.length > 0;else nonevisitst" class="row bor">
+                    
+                    <div *ngFor="let draft of confirmedvisit" class="row   py-2 col-lg-12">
+                        <div class=" row py-2 col-lg-12 col-sm-5 d-lg-none  "> 
+                            <span class="headerline col-lg-4 col-sm-12 text-sm-left ">Visit Time : </span>
+                            <span class="headerline col-lg-4 col-sm-12 text-sm-left">Visit Doctor : </span>
+                            <span class="headerline col-lg-2 col-sm-12 text-sm-left">Type Of Visit : </span>
+                            <span class="headerline col-sm-12 text-sm-left ">Confirm : </span>
+      
+                        </div>
+                      
+                        <div class="row col-sm-7 col-lg-12 py-sm-2">
+                          <div  class="col-lg-3 col-sm-12"><span class="graycolor">{{ draft.visittime}}</span></div>
+                          <div  class="col-lg-3 col-sm-12 pl-4"> <span class="graycolor">{{ draft.visitdoctor}}</span></div>
+                        <!-- </div>
+                        <div class="row"> -->
+                          <div class="col-lg-4 col-sm-12 pl-lg-5"><span class="graycolor">{{ draft.visittype}}</span></div>
+                          <!-- <a class="col-lg-2 pointer" (click)="tohisclinicalsheet(draft.visitid)">Medical Sheet</a> -->
+                          <div class="col-lg-2"><a *ngIf="!canceled[draft.visitid]"  (click)="cancel(draft.visitid)"><i class="fas fa-times ml-lg-5 pl-lg-5"></i></a><div  *ngIf="canceled[draft.visitid]"><span class="graycolor">Reservation Cancelled</span></div></div>
+                        </div>
+  
+                
+                
+                      
+                    </div>
+                      <ng-template #nonevisitst>
+                        <p>No visits found</p>
+                      </ng-template>
+                    </div>
+                  </div>
+                </div>
+       
+      
+              <div class="card bg-light mb-3" >
+                  <div class="card-header colheader">Done Visits</div>
+                  <div class="card-body">
+                     <!-- <p class="card-text"> {{draftvisit | json}}</p> -->
+                     <div class=" row p-2 bg  no-gutters  d-sm-none d-lg-flex"> 
+                        <span class="headerline col-3">Visit Time</span>
+                        <span class="headerline col-3">Visit Doctor</span>
+                        <span class="headerline col-3 ">Type Of Visit</span>
+                        <span class="headerline  col-2 "> Medical Sheet</span>
+                      
+                    </div>
+                    <!-- <p class="card-text"> {{draftvisit | json}}</p> -->
+                    <div *ngIf="donevisit.length > 0;else nonevisitst"  class="row bor">
+                    
+                    <div *ngFor="let draft of donevisit" class="row   py-2 col-lg-12">
+                        <div class=" row py-2 col-lg-12 col-sm-5 d-lg-none  "> 
+                            <span class="headerline col-lg-3 col-sm-12 text-sm-left ">Visit Time : </span>
+                            <span class="headerline col-lg-3 col-sm-12 text-sm-left">Visit Doctor : </span>
+                            <span class="headerline col-lg-2 col-sm-12 text-sm-left">Type Of Visit : </span>
+                            <span class="headerline col-sm-12 text-sm-left"> Medical Sheet : </span>
+                          
+      
+                        </div>
+                      
+                    <div class="row col-sm-7 col-lg-12 py-sm-2">
+                      <div  class="col-lg-3 col-sm-10"><span class="graycolor">{{ draft.visittime}}</span></div>
+                      <div  class="col-lg-3 col-sm-10 pl-4"> <span class="graycolor">{{ draft.visitdoctor}}</span></div>
+                    <!-- </div>
+                    <div class="row"> -->
+                      <div class="col-lg-3 col-sm-10 pl-lg-5"><span class="graycolor">{{ draft.visittype}}</span></div>
+                      <a class="col-lg-3 pl-4 pointer" (click)="tohisclinicalsheet(draft.visitid)">Medical Sheet</a>
+                     
+                    </div>
+  
+                
+                
+                      
+                    </div>
+                      <ng-template #nonevisitst>
+                        <p>No visits found</p>
+                      </ng-template>
+                    </div>
+                  </div>
+                </div>
+                  <!-- cancel visits -->
+                  <div class="card bg-light mb-3" *ngIf="cancelvisits.length > 0;else nonevisitst" >
+                    <div class="card-header colheader">Cancelled Visits</div>
+                    <div class="card-body">
+                       <!-- <p class="card-text"> {{draftvisit | json}}</p> -->
+                       <div class=" row p-2 bg  no-gutters  d-sm-none d-lg-flex"> 
+                          <span class="headerline col-4">Visit Time</span>
+                          <span class="headerline col-4">Visit Doctor</span>
+                          <span class="headerline col-4 ">Type Of Visit</span>
+                        
+                        
+                      </div>
+                      <!-- <p class="card-text"> {{draftvisit | json}}</p> -->
+                      <div   class="row bor">
+                      
+                      <div *ngFor="let draft of cancelvisits" class="row   py-2 col-lg-12">
+                          <div class=" row py-2 col-lg-12 col-sm-5 d-lg-none  "> 
+                              <span class="headerline col-lg-4 col-sm-12 text-sm-left ">Visit Time : </span>
+                              <span class="headerline col-lg-4 col-sm-12 text-sm-left">Visit Doctor : </span>
+                              <span class="headerline col-lg-4 col-sm-12 text-sm-left">Type Of Visit : </span>
+                            
+        
+                          </div>
+                        
+                      <div class="row col-sm-7 col-lg-12 py-sm-2 ">
+                        <div  class="col-lg-4 col-sm-10"><span class="graycolor">{{ draft.visittime}}</span></div>
+                        <div  class="col-lg-4 col-sm-10 pl-4"> <span class="graycolor">{{ draft.visitdoctor}}</span></div>
+                      <!-- </div>
+                      <div class="row"> -->
+                        <div class="col-lg-4 col-sm-10 pl-lg-5"><span class="graycolor">{{ draft.visittype}}</span></div>
+                       
+                       
+                      </div>
+    
+                  
+                  
+                        
+                      </div>
+                        <ng-template #nonevisitst>
+                          <p>No visits found</p>
+                        </ng-template>
+                      </div>
+                    </div>
+                  </div>
+           
+           
+         
     </main>
     </div>
+    
     </div>

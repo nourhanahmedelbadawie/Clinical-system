@@ -5,6 +5,11 @@
     font-family: sans;
     src: url(assets/fonts/OpenSans-Regular.ttf);
   }
+  
+@font-face {
+  font-family: var;
+  src: url(assets/fonts/VarelaRound-Regular.ttf);
+}
   *{
     border: none;
     margin: 0;
@@ -14,6 +19,26 @@
   ul{
     list-style: none
   }
+  a,a:hover{
+    text-decoration: none
+  }
 body{
   background-color: $greycolor
+}
+//============================= media query============================
+@media only screen and (max-width: 600px) and(min-width:320px){
+:root{
+  font-size: 11px;
+}
+
+
+}
+
+//=============================================
+@media only screen and (max-width: 1024px) and(min-width:600px) {
+:root{
+  font-size: 13px;
+}
+
+
 }

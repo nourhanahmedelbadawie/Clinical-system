@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: sans;
+  src: url(assets/fonts/OpenSans-Regular.ttf);
+}
+
+* {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: #FAF9F7;
+}
+/*# sourceMappingURL=styles.css.map */

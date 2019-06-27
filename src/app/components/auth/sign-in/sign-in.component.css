@@ -10,12 +10,21 @@ body{
    padding: 0px
 }
 .signupbtn{
-    background-color: #08d2b3;
+    background-color: #FFB33A;
     color: white;
     border: none;
     margin-bottom: 10px;
-    padding: 7px 22px;
+    padding: 7px 22px; 
 }
+.signupbtn:hover{
+    background:#f1cc50;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+}
+
 .text-color{
     color: #606066;
     font-weight: bold
@@ -26,17 +35,17 @@ body{
     overflow-y:auto
 }
 label{
-    font-size: 14px
+    font-size: 14px;
 }
 .headercolor{
-    color: #08d2b3;
+    color: #06AED5;
 }
 
 .bg{
-    background: linear-gradient(rgba(2, 241, 162, 0.7), rgba(27, 255, 179, 0.7)), url("../../../../assets/images/signup/doctornursechild.jpg");
+    background: linear-gradient(rgba(121, 196, 231,0.8), rgba(121, 196, 231,0.8)), url("../../../../assets/images/signup/doctornursechild.jpg");
     background-repeat: no-repeat;
-    background-size: auto;
-    height: auto;
+    background-size: cover;
+    /* height: auto; */
 }
 .header-style{
     color: white;
@@ -84,5 +93,19 @@ label{
     font-weight: bold;
     color:#606066
 }
-
-  
+.cursor{
+    cursor: pointer;
+}
+@media only screen and (max-width: 576px) {
+    .d-sm-none {
+        display: none !important;
+      }
+}
+.redcolor{
+    color: red;
+}
+@media only screen and (max-width: 576px) {
+    .d-sm-none {
+        display: none ;
+      }
+}

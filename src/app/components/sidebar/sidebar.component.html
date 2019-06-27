@@ -1,0 +1,152 @@
+<section id="page">
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- ============================web nav=============================== -->
+
+      <div class="col-lg-2  col-sm-2 p-0">
+        <div id="websidebar">
+          <div id="sidemenu">
+            <ul>
+              <li data-toggle="tooltip" data-placement="right" title="Home">
+                <a [routerLink]="'/home'">
+
+
+                  <i class="fas fa-home"></i>
+                  <!-- <p>Home</p> -->
+                </a>
+
+
+              </li>
+              <li *ngIf="!show" data-toggle="tooltip" data-placement="right" title="sign in">
+                <a routerLink="/side/signin">
+      
+                  <i class="fas fa-sign-in-alt"></i>
+                  <!-- <p>Sign in</p> -->
+      
+                </a>
+              </li>
+              <li  *ngIf="show"  data-toggle="tooltip" data-placement="right" title="Profile">
+
+                <a (click)="navigate()">
+
+                  <i class="fas fa-user"></i>
+                </a>
+
+
+
+
+
+        
+          <!-- <p>Profile</p> -->
+
+
+
+          </li>
+
+          <li *ngIf="show" data-toggle="tooltip" style="cursor: pointer" data-placement="right" title="log out">
+
+            <a (click)="SignOut()">
+
+
+              <i class="fas fa-sign-out-alt"></i>
+              <!-- <p>Log out</p> -->
+            </a>
+
+
+
+
+
+
+          </li>
+
+
+
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <!-- ============================mob nav=============================== -->
+
+    <div id="mobsidebar" class="col-md-1 col-sm-2">
+      <div class="menu">
+        <button (click)="displaymenu()">
+          <i class="fas fa-bars"></i>
+
+
+        </button>
+      </div>
+      <ul id="mobnav">
+        <li>
+          <a [routerLink]="'/home'">
+
+
+            <i class="fas fa-home"></i>
+            <p>Home</p>
+          </a>
+
+
+        </li>
+        <li *ngIf="show">
+
+          <a (click)="navigate()">
+
+            <i class="fas fa-user"></i>
+            <p>Profile</p>
+
+          </a>
+
+
+
+
+      
+        </li>
+        <li *ngIf="!show">
+          <a routerLink="/signin">
+
+            <i class="fas fa-sign-in-alt"></i>
+            <p>Sign in</p>
+
+          </a>
+        </li>
+
+        <li *ngIf="show">
+
+          <a (click)="SignOut()">
+
+
+            <i class="fas fa-sign-out-alt"></i>
+            <p>Log out</p>
+          </a>
+
+
+
+
+        </li>
+
+
+
+      </ul>
+    </div>
+    <!-- =====================component change====================== -->
+    <div class="component col-11">
+      <router-outlet>
+      </router-outlet>
+    </div>
+
+
+
+
+
+  </div>
+  </div>
+
+
+</section>
+<section>
+
+
+
+
+</section>

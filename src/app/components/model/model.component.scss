@@ -1,0 +1,16 @@
+
+
+.modal-body {
+    color: #606066;
+font-size: 1.5rem;
+}
+
+.modal-footer>:not(:last-child) {
+    padding: 9px 20px;
+    background-color: #06aed5;
+    color: white;
+    font-family: sans-serif;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+}

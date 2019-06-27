@@ -1,11 +1,12 @@
 export interface User {
-    username:string;
+    name:string;
     email: string;
-    phoneNumber:string;
+    phone:string;
     city:string;
     gender:boolean;
     date:string;
     password: string;
-    conpassword:string
+    confirmPassword:string;
+    image:string
 
 }

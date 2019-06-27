@@ -1,15 +1,87 @@
+[
+    {
+        "date": "6/10/2019",
+        "doctors": [
+            {
+                "id":1,
 
-{
-    "month":"may",
-    "doctors":{
-        "Mohamed":{
-            "sunday":["8-2","7-9"],
-            "satarday":["6-9"]
-        },
-        "Ali":{
-         
-        }
-        
-
+                "name": "Mohamed",
+                "appointments": [
+                    "8-2",
+                    "7-9"
+                ]
+            },
+            {
+                "id":2,
+                "name": "Ali Mohamed",
+                "appointments": [
+                    "12-54",
+                    "5-7"
+                ]
+            }
+        ]
+    },
+    {
+        "date": "6/13/2019",
+        "doctors": [
+            {
+                "id":3,
+                "name": "Mostafa Ahmed",
+                "appointments": [
+                    "10-2",
+                    "7-5"
+                ]
+            },
+            {
+                "id":4,
+                "name": "Amr Mohamed",
+                "appointments": [
+                    "5-9",
+                    "7-9"
+                ]
+            }
+        ]
+    },
+    {
+        "date": "6/12/2019",
+        "doctors": [
+            {
+                "id":5,
+                "name": "hussein Mohamed",
+                "appointments": [
+                    "10-2",
+                    "7-20"
+                ]
+            },
+            {
+                "id":6,
+                "name": "Omar",
+                "appointments": [
+                    "8-2",
+                    "7-9"
+                ]
+            }
+        ]
+    },
+    {
+        "date": "6/14/2019",
+        "doctors": [
+            {
+                "id":8,
+                "name": "Ali",
+                "appointments": [
+                    "8-2",
+                    "7-9"
+                ]
+            },
+            {
+                "id":9,
+                "name": "Omar",
+                "appointments": [
+                    "8-2",
+                    "7-9"
+                ]
+            }
+        ]
     }
-}
+]

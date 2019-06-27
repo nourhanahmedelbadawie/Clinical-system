@@ -1,6 +1,6 @@
 @import '../../../assets/sass/global/variables' ;
 .page{
-overflow: hidden;
+
 
 padding-top: 50px;
 font-family: sans;
@@ -8,6 +8,12 @@ h2{
     width: 100%;
     margin-bottom: 50px;
     font-weight: bold;
+}
+.ser_sec{
+    width: 100px;
+    height: 200px;
+    background-color: red;
+
 }
 }
 
@@ -25,12 +31,13 @@ margin-bottom: 40px;
 
 
 }
+
 button#search{
     background-color: white;
     color: gray;
     font-size: 19px;
     position: absolute;
-    top: 12px;
+    top: 5px;
   
     cursor: pointer;
     right: 28px;
@@ -47,6 +54,7 @@ button#search{
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 5px;
+    transition: all 0.5s ease-in-out;
     box-shadow: 0px 1px 3px rgba(0,0,0,0.25);
         .item_doctor{
         display: flex;
@@ -59,6 +67,60 @@ button#search{
        height: auto;
     }
 }
+.docrate{
+    #rating{
+        display: inline-flex; 
+        .star{
+            width: 20px;
+            height: 20px;
+            
+        }
+        .star:before {
+            font-family: "Font Awesome 5 Free";
+            content: "\f005";
+            display: inline-block;
+            padding-right: 3px;
+            vertical-align: middle;
+            font-weight: 900;
+            color:rgb(253, 238, 29);
+         }
+         .stremp:before {
+            font-family: "Font Awesome 5 Free";
+            content: "\f005";
+            display: inline-block;
+            padding-right: 3px;
+            vertical-align: middle;
+            font-weight: 900;
+            color:#7777;
+         }
+    }
+    // #rating{
+    //     font-size: 20px;
+    //     display: inline-flex;
+    //     background-color: red;
+    //     z-index: 5;
+    //     width: 100px;
+    //     height: 100px;
+    //     div.star{
+    //         width: 20px;
+    //         height: 20px;
+    //         background-color: red;
+    //     }
+    //      .star::after{
+    //         content: '\f005';
+    //         color:#7777;
+    //         font-family: FontAwesome;
+    //         cursor: pointer;
+    //     }
+    //     & > .star.full::after{
+    //         content: '\f005';
+    //         color:rgb(253, 238, 29);
+    //         font-family: FontAwesome;
+        
+    //     } 
+    //     }
+}
+
 .item_doctor_txt{
     width:40%;
     h5{
@@ -80,14 +142,15 @@ button#search{
     }
 }
 button.book{
-    padding: 0px 30px;
+   
+    background-color: $pricolor;
+    padding: 0px 1rem;
     height: 46px;
     color: white;
-    background-color: $yellowcolor;
-
+  
     font-weight: bold;
     font-size: 1rem;
-    letter-spacing: 2px;
+    letter-spacing: 0.5px;
     &:hover{
         background-color: #ffc60b;
         color: aliceblue;
@@ -97,13 +160,80 @@ button.book{
     }
 }
 }
+
+.doclist{
+    position: relative;
+  
+
+    ul{
+        position: relative; 
+        z-index: 3;
+       
+        height: 1000px;
+        background-color: $greycolor;
+        &:empty{
+            display: none;
+        }
+
+       
+    }
+    
+}
+#wrong{
+ 
+    position: absolute;
+right: 35%;
+text-align: center;
+display: table; 
+margin: 0 auto;
+
+    img{
+        display: table;
+        width: 117px;
+        height: 100px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+    p{
+        text-align: center;
+        color: $txtcolor;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}
+#untilresponse{
+   background-color: $greycolor;
+   width: 100%;
+    height: 1000px;
+    position: relative;
+    z-index: 7;
+    display: flex;
+    justify-content: center;
+}
 //=====================media query======================
-@media only screen and (max-width: 600px) and(min-width:320px){
+@media only screen and (max-width: 762px) and(min-width:320px){
 button.book{
     transform:none;
 }
 
 
+       .choose{
+           padding-left: 53px;
+        }
+  
+.doctor{
+    padding: 7px 3px;
+    .item_doctor_txt{
+        padding-top: 0
+    }
+    button.book{
+        height: 30px;
+        border-radius: 25px;
+
+    }
+    height: auto;
+    font-size: 0.8rem;
+}
 
 
 
@@ -143,26 +273,3 @@ button.book{
 
 
 
-
- #rating{
-font-size: 20px;
-display: inline-flex;
-& > .star::after{
-    content: '\f005';
-    color:#7777;
-    font-family: FontAwesome;
-    cursor: pointer;
-}
-& > .star.full::after{
-    content: '\f005';
-    color:rgb(253, 238, 29);
-
-}
-
-
-
-
-
-    
- 
-}

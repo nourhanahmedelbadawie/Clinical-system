@@ -1,7 +1,7 @@
 <div class="page">
 
 
-  <div class="header">
+  <div class="header" id="main">
 
     <div class="overlay">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -19,22 +19,17 @@
           </div>
         </div>
 
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
       <!-- =======================nav========================== -->
       <nav class="navbar-fixed-top navbar navbar-expand-sm fixed-top">
-        <div class="container">
-          <a class="logo nav-brand" href="" >MoVo</a>
-          <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-cont">
-            <i class="fas fa-bars"></i>
-          </button>
+        <div  class="container">
+          <a class="logo nav-brand" href="" >
+
+<img  src="../../../assets/img/logoo.png">
+
+
+          </a>
+        
           <div>
            <ul class="navbar-nav ml-auto collapse navbar-collapse" id="nav-cont"> 
               <li class="nav-item mr-4">
@@ -42,12 +37,33 @@
               <li class="nav-item mr-4">
                 <a class="nav-link " href="home#news"  target="_self" >News</a></li>
 
-              <li class="nav-item mr-4">
+              <li class="nav-item">
                 <a class="nav-link mr-4" href="home#contact"> Contact</a>
               </li>
+              
+              <!-- <li class=" nav-item " style="padding-right: 25px" *ngIf="isLoggedIn">
+                <a class="nav-link " routerLink="/side/home/notification" (click)="gotonotification()"><i class="far fa-bell notiicon"></i><span class="counter" *ngIf="count>0">{{count}}</span></a>
+              </li> -->
+              <div  style="cursor: pointer" *ngIf="downloadURL | async; let url " routerLink="/side/home/dashboard" class="pointer">
+                <img style="cursor: pointer" [src]="url" alt="Image from AngularFireStorage" class=" img-fluid z-depth-1 rounded-circle  img" >
+            <!-- </div> -->
+             </div>
+             <div style="cursor: pointer" *ngIf="(downloadURL==null || downloadURL.length==0) && isLoggedIn" routerLink="/side/home/dashboard" class="text-center py-3">
+                <img src="../../../assets/img/img.png" width= 30px>
+          
+              </div>
+            <div class="ml-9"  *ngIf="!isLoggedIn">
               <li class="nav-item" id="sign">
-                 <a class="nav-link" > Sign in</a>
-              </li>
+                <div class="hover" ngbDropdown class="d-inline-block">
+                  <button style="color: #FFC60B; transition: all 0.5s ease-in-out" class="icon" id="dropdownBasic1" ngbDropdownToggle>
+                    <i class="hover" style="color: #FFC60B;" class="far fa-user"></i></button>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button class="nav-link colgray" (click)="navigate()"> Sign in</button>
+                    <button class="nav-link colgray" routerLink="/side/signup"> Sign up</button>
+                  </div>                     
+                </div>
+             </li>
+            </div>
 
             </ul> 
 
@@ -55,24 +71,79 @@
         </div>
       </nav>
 
+<!-- ===========================mob nav================== -->
+
+<div class="navmob">
+    <div class=" nav-item" style="padding-right: 25px;
+ ">
+        <a  *ngIf="isLoggedIn"class="nav-link " routerLink="/side/home/notification" (click)="gotonotification()"><i class="far fa-bell notiicon"></i><span class="counter" *ngIf="count>0">{{count}}</span></a>
+    </div>
+    <div  *ngIf="downloadURL | async; let url " routerLink="/side/home/dashboard" class="pointer">
+      <img [src]="url" alt="Image from AngularFireStorage" class=" img-fluid z-depth-1 rounded-circle  img" >
+  <!-- </div> -->
+   </div>
+   <div style="cursor: pointer" *ngIf="(downloadURL==null || downloadURL.length==0) && isLoggedIn" routerLink="/side/home/dashboard" class="text-center py-3">
+      <img style="cursor: pointer" src="../../../assets/img/img.png" width= 30px>
+
+    </div>
+    <div class="ml-9"  *ngIf="!isLoggedIn">
+      <div class="nav-item" id="sign">
+        <div class="hover" ngbDropdown class="d-inline-block">
+          <button style="padding-top:5px;color: #FFC60B; transition: all 0.5s ease-in-out" class="icon" id="dropdownBasic1" ngbDropdownToggle>
+            <i class="hover" style="color: #FFC60B;" class="far fa-user"></i></button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button class="nav-link colgray" (click)="navigate()"> Sign in</button>
+            <button class="nav-link colgray" (click)="navigate_1()"> Sign up</button>
+          </div>                     
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- ================================= -->
+
+
+
+
+
+
+
+
 
 
     </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
 
 
 
   <div class="hdtxt" >
-    <h1>Lorem ipsum dolor</h1>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+    <h1>Making Health
+       Better Together</h1>
+    <p>Your Health is Our Top Priority with Comprehensive,
+       Affordable medical service so we provide top clinical system with best doctors  </p>
 
-    <button routerLink="/patient">Book now</button>
+    <button routerLink="/side/patient" class="pointer">Book now</button>
 
   </div>
 
 
   <!-- ========================second section======================== -->
-  <div class="sec_section" id="main">
+  <div class="sec_section" >
     <div class="container">
       <div class="row">
        
@@ -80,36 +151,29 @@
           <img class="col-md-6" src="../../../assets/img/icon/magnifier.svg" alt="search">
           <h2>Search
           </h2>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt quasi eius in eaque nobis incidunt nam vero
-          nemo
-          ipsam, dicta sed, cum ratione dolorem neque soluta maiores, accusamus quod fugit!
+          search by 
+doctor name from our experience team 
         </div>
         <div class="txt col-md-3 col-sm-12">
             <img class="col-md-6" src="../../../assets/img/icon/doctor.svg" alt="search">
 
           <h2>Choose doctor
           </h2>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt quasi eius in eaque nobis incidunt nam vero
-          nemo
-          ipsam, dicta sed, cum ratione dolorem neque soluta maiores, accusamus quod fugit!
+          choose your doctor to get his appointements
         </div>
         <div class="txt col-md-3 col-sm-12">
             <img class="col-md-6" src="../../../assets/img/icon/calendar-with-a-clock-time-tools.svg" alt="search">
 
-          <h2>Scan calinder
+          <h2>Scan  calendar
           </h2>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt quasi eius in eaque nobis incidunt nam vero
-          nemo
-          ipsam, dicta sed, cum ratione dolorem neque soluta maiores, accusamus quod fugit!
+         scan from calendar the best time available for you
         </div>
         <div class="txt col-md-3 col-sm-12">
             <img class="col-md-6" src="../../../assets/img/icon/accepted-notes.svg" alt="search">
 
           <h2>Confirm
           </h2>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt quasi eius in eaque nobis incidunt nam vero
-          nemo
-          ipsam, dicta sed, cum ratione dolorem neque soluta maiores, accusamus quod fugit!
+      confirm booking and wait our booking confirmation
         </div>
       
 
@@ -121,62 +185,36 @@
 
 
 </div>
-    <!-- ========================News======================== -->
-    <section class="news" id="news">
+<!-- ========================News======================== -->
+<section class="news" id="news">
 
 
 
-      <div class="container">
-        <div class="row">
-          <h3 class="text-center">News</h3>
-        </div>
-      </div>
-
-
-
-
-
-
-      <div class="container">
-        <div class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row">
-                <div *ngFor="let i of news" class=" element  col-sm">
-
-                  <div class="img d-block w-100">
-                    <img src={{i.src}}>
-                    <div class="txt">
-                      <a href="#">
-                        <p><a>{{i.date}}</a></p>
-                        <p><a>{{i.Name}}</a></p>
-                      </a>
-                    </div>
-
-
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
+  <div class="container">
+    <div class="row">
+      <h3 class="text-center">News</h3>
+    </div>
+  </div>
 
 
 
 
-                <div *ngFor="let i of news" class=" element  col-sm">
-
-                  <div class="img d-block w-100">
-                    <img src={{i.src}}>
-                    <div class="txt">
-                      <a href="#">
-                        <p><a>{{i.date}}</a></p>
-                        <p><a>{{i.Name}}</a></p>
-                      </a>
-                    </div>
 
 
-                  </div>
+  <div class="container webnews">
+    <div id="carouselExampleControls"  class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row">
+            <div *ngFor="let i of news" class=" element  col-sm">
+
+              <div class="img d-block w-100 ">
+                <img  src={{i.src}}>
+                <div class="txt">
+                  <a>
+                    <p><a>{{i.date}}</a></p>
+                    <p><a>{{i.Name}}</a></p>
+                  </a>
                 </div>
 
 
@@ -184,7 +222,70 @@
             </div>
           </div>
         </div>
+        <div class="carousel-item">
+          <div class="row">
+
+
+
+
+            <div *ngFor="let i of news" class=" element  col-sm">
+
+              <div class="img d-block w-100">
+                <img src={{i.src}}>
+                <div class="txt">
+                  <a href="#">
+                    <p><a>{{i.date}}</a></p>
+                    <p><a>{{i.Name}}</a></p>
+                  </a>
+                </div>
+
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+   
       </div>
+ <!-- controls -->
+ <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="sr-only">Next</span>
+</a> -->
+<!-- ----------- -->
+
+    </div>
+  </div>
+
+<div id="mobnews">
+<div class="container">
+<div class="row">
+
+  <div *ngFor="let i of news ">
+
+
+      <div class=" img d-block w-100">
+          <img class="img-fluid"src={{i.src}}>
+          <div class="txt">
+            <a href="#">
+              <p><a>{{i.date}}</a></p>
+              <p><a>{{i.Name}}</a></p>
+            </a>
+          </div>
+
+
+        </div>
+
+
+  </div>
+</div>
+</div>
+</div>
 
 
 
@@ -195,9 +296,9 @@
 
 
 
+</section>
 
 
-    </section>
 
 
 
@@ -256,6 +357,10 @@
 </div>
 
     <!-- ========================Contact========================  -->
+  
+    <div class="contentsec" style="overflow: hidden;height: auto;;">
+      
+   
     <div class="container" id="contact">
       <div class="row">
         <h3 class="text-center">Contact us</h3>
@@ -292,6 +397,7 @@
       </form>
 
     </div>
+  </div>
     <!-- ==============================footer======================= -->
     <section class="footer">
       <div class="container">
@@ -302,7 +408,7 @@
             <p><a><i class="fas fa-map-marker-alt"></i>Sidi bisher, Elmotaza, Alexandria </a></p>
 
             <p> <i class="fas fa-phone"></i>123421344</p>
-            <p><i class="fab fa-google-plus-g"></i>Loremipsum@gmail.com</p>
+            <p><i class="fab fa-google-plus-g"></i>hospital@gmail.com</p>
 
           </div>
 
@@ -318,12 +424,10 @@
     </section>
 
     <div id="cpy">
-        <p class="text-center"><i class="far fa-copyright"></i>copywrite</p>
+        <p class="text-center"><i class="far fa-copyright"></i>copywrite Dewan</p>
 
       </div>
 
 
 
-
-
-  </div>
+</div>

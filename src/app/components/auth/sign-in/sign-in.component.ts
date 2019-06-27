@@ -6,25 +6,25 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { UsersService } from '../../../service/users.service';
+import Swal from 'sweetalert2';
+// import swal from 'sweetalert';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-  datamyuser={};
+  public testt:any;
+  public datamyuser={};
   myInnerHeight = window.innerHeight;
-  flagin = false;
-  errMsgin: string;
-  userModel = {
+  public flagin = false;
+  public errMsgin: string;
+  public userModel = {
     email: "",
     password: ""
   }
-  list = {};
-
-  data;
-
-
+  public list = {};
+  public data;
   constructor(public authservice: AuthService,
     public ngZone: NgZone,
     public router: Router,
@@ -37,63 +37,61 @@ export class SignInComponent implements OnInit {
 
   }
   // signin
-  onSignIn(form: NgForm) {
+   onSignIn(form: NgForm) {
+
+
+    document.getElementById("loading").style.display="inline-block"
+
+
+
     const email = form.value.email;
     const password = form.value.password;
     this.authservice.signInUsers(email, password).then(result => {
       this.data = this.db.list('/clinical-system-b5ad4/clinical-system-b5ad4')
-      // this.db.collection('/people').snapshotChanges()
-      //   .subscribe(snapshots => {
-      //     resolve(snapshots)
-      //   })
-      //  debugger;
       console.log(this.data)
       this.data=this.db.list('/clinical-system-b5ad4', ref => ref.orderByChild('email')
       .equalTo(email)
       ).valueChanges()
-    .subscribe(userdata => {
+    .subscribe(async userdata => {
       console.log(userdata); // Check the returned values;
       this.datamyuser=userdata;
       this.userData.setUserData(this.datamyuser);
+      localStorage.setItem("userdetails",JSON.stringify(this.datamyuser))
+      // debugger
+      await this.authservice.setUserFromFirebase()
+      // debugger
       this.ngZone.run(() => {
-        this.router.navigate(['dashboard']);
-        })
+        this.checkURL();
+        // this.router.navigate(['home']);
+
+
+ //===redirect to calinder url
+ if(localStorage.getItem("cal_url")){
+
+  this.router.navigate([localStorage.getItem("cal_url")]);
+
+  localStorage.removeItem("cal_url")
+}else{
+  this.router.navigate(['/home'])
+}
+
+
+
+        });
     })
-    
-    
-
-      //  const db =this.db.database.ref('clinical-system-b5ad4')
-      //  const data =this.db.orderByChild('email').equalTo(email).on("child_added",function(snapshot){
-      //            console.log(snapshot.key)
-      //  })
-
-      //   console.log(data)
-      // return new Promise<any>((resolve, reject) => {
-      //   this.firestore.collection('/clinical-system-b5ad4').snapshotChanges()
-      //     .subscribe(snapshots => {
-      //       resolve(snapshots)
-      //       console.log(snapshots)
-      //     })
-      // })
-
-      // this.ngZone.run(() => {
-       
-      //   });     
     }).catch((error) => {
-      window.alert(error.message)
-      this.router.navigate(['signin']);
-      debugger;
+      Swal.fire({
+        title: 'Error!',
+        text: error.message,
+        type: 'error',
+        confirmButtonText: 'Close'
+      })
+      document.getElementById("loading").style.display="none"
+      // debugger;
+      // swal("Error", error.message, "error");
+      //  window.alert(error.message)
+      // this.router.navigate(['/signin']);
     });
-    //  test
-    //  this.authservice.getEmployees().subscribe(actionArray => {
-    //   this.list = actionArray.map(item => {
-    //     return {
-    //       item
-    //     } 
-    //   })
-    // });
-    // console.log(this.list)
-
   }
 
   GoogleAuth() {
@@ -102,9 +100,17 @@ export class SignInComponent implements OnInit {
   FacebookAuth() {
     this.authservice.FacebookAuth()
   }
+  // checkurl
+  checkURL(){
+    debugger
+  this.testt= this.authservice.redirectURL
+  if(this.testt=="/home"){
+    this.router.navigate(['home']);
+  }else{
+    this.router.navigateByUrl(this.testt);
+  }
+  console.log(this.testt)
+    return this.testt;
 
-
-
-
-
+  }
 }

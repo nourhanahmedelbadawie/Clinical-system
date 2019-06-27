@@ -1,0 +1,18 @@
+@import '../../../assets/sass/global/variables' ;
+@import '../../../assets/sass/global/mixins' ;
+.notification{
+  .title{
+      font-weight: bold;
+      font-size: 17px;
+      color: $yellowcolor;
+  }  
+  .body{
+      color: $txtcolor;
+  }
+  .title-page{
+      color: $pricolor;
+  }
+  .non{
+      color: $txtcolor;
+  }
+}

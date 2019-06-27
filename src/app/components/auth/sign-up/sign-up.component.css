@@ -1,0 +1,106 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #e2e6ea;
+}
+
+.sign-up {
+  background-color: white;
+  width: 100%;
+  padding: 0px;
+}
+
+.headercolor {
+  color: #08d2b3;
+}
+
+.signupbtn {
+  background-color: #08d2b3;
+  color: white;
+  border: none;
+  margin-bottom: 10px;
+  padding: 7px 22px;
+}
+
+.fb {
+  color: #3B5998;
+  font-size: 25px;
+}
+
+.google {
+  color: #dd4b39;
+  font-size: 25px;
+}
+
+.text-color {
+  color: #606066;
+  font-weight: bold;
+}
+
+.normal-font {
+  font-weight: normal;
+}
+
+label {
+  font-size: 14px;
+}
+
+.bg {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 241, 162, 0.7)), to(rgba(27, 255, 179, 0.7))), url("../../../../assets/images/signup/doctornursechild.jpg");
+  background: linear-gradient(rgba(2, 241, 162, 0.7), rgba(27, 255, 179, 0.7)), url("../../../../assets/images/signup/doctornursechild.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  height: auto;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+/* social media*/
+.style-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+.center {
+  text-align: -webkit-center;
+}
+
+.btn-login {
+  width: 45%;
+}
+
+.stylefont {
+  font-weight: bold;
+  color: #606066;
+}
+
+@media only screen and (max-width: 635px) {
+  .col-sm-6 {
+    -ms-flex: 0 0 50%;
+    -webkit-box-flex: 0;
+            flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .col-sm-4 {
+    -ms-flex: 0 0 33.333333%;
+    -webkit-box-flex: 0;
+            flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+.cursor{
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=sign-up.component.css.map */
