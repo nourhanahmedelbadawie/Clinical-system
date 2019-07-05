@@ -1,70 +1,70 @@
 [
     {
-        "date": "6/10/2019",
+        "date": "7/10/2019",
         "doctors": [
             {
                 "id":1,
 
                 "name": "Mohamed",
                 "appointments": [
-                    "8-2",
-                    "7-9"
+                    "2pm-8pm",
+                    "7pm-9pm"
                 ]
             },
             {
                 "id":2,
                 "name": "Ali Mohamed",
                 "appointments": [
-                    "12-54",
-                    "5-7"
+                    "6pm-8pm",
+                    "7pm-9pm"
                 ]
             }
         ]
     },
     {
-        "date": "6/13/2019",
+        "date": "7/13/2019",
         "doctors": [
             {
                 "id":3,
                 "name": "Mostafa Ahmed",
                 "appointments": [
-                    "10-2",
-                    "7-5"
+                    "6pm-8pm",
+                    "7pm-9pm"
                 ]
             },
             {
                 "id":4,
                 "name": "Amr Mohamed",
                 "appointments": [
-                    "5-9",
-                    "7-9"
+                    "5pm-8pm",
+                    "3pm-9pm"
                 ]
             }
         ]
     },
     {
-        "date": "6/12/2019",
+        "date": "7/12/2019",
         "doctors": [
             {
                 "id":5,
                 "name": "hussein Mohamed",
                 "appointments": [
-                    "10-2",
-                    "7-20"
+                    "6pm-8pm",
+                    "7pm-9pm"
                 ]
             },
             {
                 "id":6,
                 "name": "Omar",
                 "appointments": [
-                    "8-2",
-                    "7-9"
+                    "9pm-10pm",
+                    "7pm-9pm"
                 ]
             }
         ]
     },
     {
-        "date": "6/14/2019",
+        "date": "7/14/2019",
         "doctors": [
             {
                 "id":8,

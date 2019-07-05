@@ -59,7 +59,7 @@ console.log("doctor selected in patient component",this.doctorselected)
     
     //check of data 
     // ./assets/data/calender_data.json
-    this.httpService.get('http://172.16.2.28:8069/clinical_management_system/get_empty_slots/').subscribe(
+    this.httpService.get('./assets/data/calender_data.json').subscribe(
 
       data => {
     //  debugger

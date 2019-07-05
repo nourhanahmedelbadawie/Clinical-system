@@ -63,7 +63,7 @@ private  httpOptions = {
 
 
    let This=this
-  this.httpService.get('http://172.16.2.28:8069/clinical_management_system/doctors/').subscribe(
+  this.httpService.get('./assets/data/doctors.json').subscribe(
     data => {
       this.loading = false //animation
 
